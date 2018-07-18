@@ -16,9 +16,11 @@ ActiveRecord::Schema.define(version: 2018_07_18_100037) do
   enable_extension "plpgsql"
 
   create_table "users", force: :cascade do |t|
+    t.string "lyft_id"
     t.string "first_name"
     t.string "last_name"
     t.string "lyft_token"
+    t.string "lyft_refresh_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
