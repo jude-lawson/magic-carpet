@@ -1,5 +1,6 @@
 class AdventuresController < ApplicationController
   def create
+<<<<<<< HEAD
     prefs = params[:preferences]
     d_h = DestinationHandler.new(prefs)
     dest = d_h.find_a_restaurant
@@ -12,5 +13,8 @@ class AdventuresController < ApplicationController
       # price: l_s.get_estimate(@current_location, dest.location),
       destination: dest
     }
+=======
+    render json: { message: 'It works!' }
+>>>>>>> Adds in directly rendered data to satisfy frontend Fetch - this needs to be removed later.
   end
 end
