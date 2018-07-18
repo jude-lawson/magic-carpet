@@ -194,6 +194,7 @@ DEPENDENCIES
   bootsnap (>= 1.1.0)
   byebug
   capybara (~> 3.3)
+  faraday
   figaro
   listen (>= 3.0.5, < 3.2)
   omniauth-lyft
