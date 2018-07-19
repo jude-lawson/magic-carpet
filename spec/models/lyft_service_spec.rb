@@ -81,4 +81,63 @@ describe 'Lyft Service' do
       expect(actual).to eq('123')
     end
   end
+
+  describe '#get_estimate' do
+    it 'returns an cost estimate for ride' do
+      user = create(:user)
+      origin = { lat: 37.77663, lng: -122.39227 }
+      destination = { lat: 37.771, lng: -122.39123 }
+
+      stub_request(:get, 'https://api.lyft.com/v1/cost').
+           to_return(status: 200, body: {
+              "cost_estimates": [
+                {
+                  "ride_type": "lyft_plus",
+                  "estimated_duration_seconds": 913,
+                  "estimated_distance_miles": 3.29,
+                  "estimated_cost_cents_max": 2355,
+                  "primetime_percentage": "25%",
+                  "currency": "USD",
+                  "estimated_cost_cents_min": 1561,
+                  "display_name": "Lyft Plus",
+                  "primetime_confirmation_token": null,
+                  "cost_token": null,
+                  "is_valid_estimate": true
+                },
+                {
+                  "ride_type": "lyft_line",
+                  "estimated_duration_seconds": 913,
+                  "estimated_distance_miles": 3.29,
+                  "estimated_cost_cents_max": 475,
+                  "primetime_percentage": "0%",
+                  "currency": "USD",
+                  "estimated_cost_cents_min": 475,
+                  "display_name": "Lyft Line",
+                  "primetime_confirmation_token": null,
+                  "cost_token": null,
+                  "is_valid_estimate": true
+                },
+                {
+                  "ride_type": "lyft",
+                  "estimated_duration_seconds": 913,
+                  "estimated_distance_miles": 3.29,
+                  "estimated_cost_cents_max": 1755,
+                  "primetime_percentage": "25%",
+                  "currency": "USD",
+                  "estimated_cost_cents_min": 1052,
+                  "display_name": "Lyft",
+                  "primetime_confirmation_token": null,
+                  "cost_token": null,
+                  "is_valid_estimate": true
+                }
+              ]
+            }, headers: {})
+
+      lyft_service = LyftService.new(user.lyft_token, user.lyft_refresh_token)
+      actual = lyft_service.get_estimate(origin, destination)
+
+      expect(actual).to be_a(String)
+      expect(response).to be(sucessful)
+    end
+  end
 end
