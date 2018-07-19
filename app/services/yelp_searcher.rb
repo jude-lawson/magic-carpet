@@ -4,6 +4,7 @@ class YelpSearcher
   end
 
   def self.go_get(path)
+    # this will connect to a conn method which will make the faraday call
     %w(restaurant1 restaurant2)
   end
 end
