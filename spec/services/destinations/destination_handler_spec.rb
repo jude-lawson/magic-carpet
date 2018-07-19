@@ -14,8 +14,8 @@ RSpec.describe DestinationHandler do
 
       restaurants = File.open("./fixtures/restaurants.json")
 
-      stub_request(:get, "https://api.yelp.com/v3/businesses/search?latitude=39.73915&longitude=-104.9847&open_now=true&price%5B%5D=1&price%5B%5D=2&price%5B%5D=3&radius=2000&term=restaurants").
-         with(
+      stub_request(:get, "https://api.yelp.com/v3/businesses/search?latitude=39.73915&longitude=-104.9847&open_now=true&price%5B%5D=1&price%5B%5D=2&price%5B%5D=3&radius=2000&term=restaurants")
+      .with(
            headers: {
           'Accept'=>'*/*',
           'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
@@ -43,8 +43,8 @@ RSpec.describe DestinationHandler do
   
         restaurants = File.open("./fixtures/restaurants.json")
   
-        stub_request(:get, "https://api.yelp.com/v3/businesses/search?latitude=39.73915&longitude=-104.9847&open_now=true&price%5B%5D=1&price%5B%5D=2&price%5B%5D=3&radius=2000&term=restaurants").
-           with(
+        stub_request(:get, "https://api.yelp.com/v3/businesses/search?latitude=39.73915&longitude=-104.9847&open_now=true&price%5B%5D=1&price%5B%5D=2&price%5B%5D=3&radius=2000&term=restaurants")
+        .with(
              headers: {
             'Accept'=>'*/*',
             'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',

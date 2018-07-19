@@ -5,8 +5,8 @@ RSpec.describe YelpSearcher do
     it 'should return a list of Destination objects' do
       restaurants = File.open("./fixtures/restaurants.json")
 
-      stub_request(:get, "https://api.yelp.com/v3/businesses/search?latitude=39.7293&longitude=-104.9844&open_now=true&price=1,2,3&radius=1000&term=restaurants").
-         with(
+      stub_request(:get, "https://api.yelp.com/v3/businesses/search?latitude=39.7293&longitude=-104.9844&open_now=true&price=1,2,3&radius=1000&term=restaurants")
+      .with(
            headers: {
           'Accept'=>'*/*',
           'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
