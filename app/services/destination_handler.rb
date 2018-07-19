@@ -11,7 +11,7 @@ class DestinationHandler
   end
 
   def get_restaurants
-    YelpSearcher.get_restaurants(parameters)
+    YelpSearcher.new(parameters).get_restaurants
     # This is the area which would act as a router between our different destination information retrival methods and locations
   end
 

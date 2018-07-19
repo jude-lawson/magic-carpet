@@ -1,21 +1,28 @@
 class YelpSearcher
-  def self.get_restaurants(parameters)
-    go_get('restaurants')
+  def initialize(parameters)
+    @parameters = parameters
   end
 
-  def self.go_get(path)
-    # this will connect to a conn method which will make the faraday call
-    %w(restaurant1 restaurant2)
+  def get_restaurants
+    JSON.parse(search.parameters.body, symbolize_names: true)
   end
 
-  def go_get(info)
-    JSON.parse(conn.get("").body)
+  def search
+    conn.get("/businesses/search") do |req|
+      parameters.each do |search, value|
+        req.params[search] = value
+      end
+    end
   end
 
   def conn
     Faraday.new(:url => "https://api.yelp.com/v3") do |faraday|
-      faraday.headers["Authorization"] = ("Bearer " + token)
+      faraday.headers["Authorization"] = ("Bearer " + ENV["lyft_api_key"])
       faraday.adapter Faraday.default_adapter
     end
   end
+
+  private 
+  attr_reader :parameters
+
 end
