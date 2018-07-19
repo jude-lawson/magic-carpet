@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Destinations::DestinationHandler do
+RSpec.describe Destination::DestinationHandler do
   describe 'get_restaurants' do
     it 'should be fully wired together' do
       parameters = {
@@ -13,7 +13,7 @@ RSpec.describe Destinations::DestinationHandler do
           "hamburgers"
         ]
       }
-      dh = DestinationHandler.new(paramters)
+      dh = DestinationHandler.new(parameters)
       restaurant = dh.find_a_restaurant
       expect(restaurant).to be true
     end

@@ -1,4 +1,4 @@
-module WeightedRandomizer
+class WeightedRandomizer
 
   def decide(destinations)
     # destinations should be an array of potential destinations, or other future objects which only need to respond
