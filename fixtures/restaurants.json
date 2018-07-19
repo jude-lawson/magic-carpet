@@ -1,0 +1,910 @@
+{
+  "businesses": [
+      {
+          "id": "i8VF3q7dTszCcigJSMcJzQ",
+          "alias": "angelos-taverna-denver",
+          "name": "Angelos Taverna",
+          "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/THZ_l8WZZkw6xZitYVQV6Q/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/angelos-taverna-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 768,
+          "categories": [
+              {
+                  "alias": "italian",
+                  "title": "Italian"
+              },
+              {
+                  "alias": "seafood",
+                  "title": "Seafood"
+              },
+              {
+                  "alias": "bars",
+                  "title": "Bars"
+              }
+          ],
+          "rating": 4.5,
+          "coordinates": {
+              "latitude": 39.725523,
+              "longitude": -104.979224
+          },
+          "transactions": [],
+          "price": "$$",
+          "location": {
+              "address1": "620 E 6th Ave",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "620 E 6th Ave",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+13037443366",
+          "display_phone": "(303) 744-3366",
+          "distance": 610.1822843348316
+      },
+      {
+          "id": "Ajoe69mT3dQ58qm_q-3-LQ",
+          "alias": "capitol-hill-tavern-denver",
+          "name": "Capitol Hill Tavern",
+          "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/mpOf5zD0T5ONDLI6v8LykQ/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/capitol-hill-tavern-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 168,
+          "categories": [
+              {
+                  "alias": "bars",
+                  "title": "Bars"
+              },
+              {
+                  "alias": "tradamerican",
+                  "title": "American (Traditional)"
+              },
+              {
+                  "alias": "italian",
+                  "title": "Italian"
+              }
+          ],
+          "rating": 4,
+          "coordinates": {
+              "latitude": 39.735573,
+              "longitude": -104.982647
+          },
+          "transactions": [],
+          "price": "$$",
+          "location": {
+              "address1": "1225 Logan St",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "1225 Logan St",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+13038613777",
+          "display_phone": "(303) 861-3777",
+          "distance": 713.4510686368027
+      },
+      {
+          "id": "PT2ucqUtXArA6Gd2wywG2w",
+          "alias": "the-fainting-goat-pub-denver",
+          "name": "The Fainting Goat Pub",
+          "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/0ViVUgfMfo9MKY_T3X_Y3Q/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/the-fainting-goat-pub-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 216,
+          "categories": [
+              {
+                  "alias": "pubs",
+                  "title": "Pubs"
+              },
+              {
+                  "alias": "newamerican",
+                  "title": "American (New)"
+              }
+          ],
+          "rating": 4,
+          "coordinates": {
+              "latitude": 39.72996,
+              "longitude": -104.98702
+          },
+          "transactions": [],
+          "price": "$$",
+          "location": {
+              "address1": "846 Broadway",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "846 Broadway",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+13039452323",
+          "display_phone": "(303) 945-2323",
+          "distance": 235.5049019874597
+      },
+      {
+          "id": "IvPkDs4T8mEH7XzFxMuVGQ",
+          "alias": "city-o-city-denver",
+          "name": "City O' City",
+          "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/wjE50PIHczYudxp-wMYLqQ/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/city-o-city-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 1635,
+          "categories": [
+              {
+                  "alias": "breakfast_brunch",
+                  "title": "Breakfast & Brunch"
+              },
+              {
+                  "alias": "vegan",
+                  "title": "Vegan"
+              },
+              {
+                  "alias": "tradamerican",
+                  "title": "American (Traditional)"
+              }
+          ],
+          "rating": 4,
+          "coordinates": {
+              "latitude": 39.7367226482267,
+              "longitude": -104.984684393258
+          },
+          "transactions": [],
+          "price": "$$",
+          "location": {
+              "address1": "206 E 13th Ave",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "206 E 13th Ave",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+13038316443",
+          "display_phone": "(303) 831-6443",
+          "distance": 825.7181117615451
+      },
+      {
+          "id": "YB-th2or0P4qyeF15SVrog",
+          "alias": "vesper-lounge-denver",
+          "name": "Vesper Lounge",
+          "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/jtwXeAlRqABLoy4kf5dArQ/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/vesper-lounge-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 121,
+          "categories": [
+              {
+                  "alias": "tradamerican",
+                  "title": "American (Traditional)"
+              },
+              {
+                  "alias": "beerbar",
+                  "title": "Beer Bar"
+              },
+              {
+                  "alias": "cocktailbars",
+                  "title": "Cocktail Bars"
+              }
+          ],
+          "rating": 4,
+          "coordinates": {
+              "latitude": 39.727429,
+              "longitude": -104.983912
+          },
+          "transactions": [],
+          "price": "$$",
+          "location": {
+              "address1": "233 E 7th Ave",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "233 E 7th Ave",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+17203280314",
+          "display_phone": "(720) 328-0314",
+          "distance": 212.18988706912992
+      },
+      {
+          "id": "wxSY76dwM1K6JFGyo1MV-w",
+          "alias": "bang-up-to-the-elephant-denver",
+          "name": "Bang Up To The Elephant!",
+          "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/RpcuSsIhwitoLlLf6ZO7gQ/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/bang-up-to-the-elephant-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 161,
+          "categories": [
+              {
+                  "alias": "caribbean",
+                  "title": "Caribbean"
+              },
+              {
+                  "alias": "musicvenues",
+                  "title": "Music Venues"
+              },
+              {
+                  "alias": "bars",
+                  "title": "Bars"
+              }
+          ],
+          "rating": 3.5,
+          "coordinates": {
+              "latitude": 39.73722,
+              "longitude": -104.97956
+          },
+          "transactions": [],
+          "price": "$$",
+          "location": {
+              "address1": "1310 Pearl St",
+              "address2": "",
+              "address3": null,
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "1310 Pearl St",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+13037924949",
+          "display_phone": "(303) 792-4949",
+          "distance": 972.6183738198566
+      },
+      {
+          "id": "vk5o0YwohHWGr1RS7gt3nQ",
+          "alias": "cap-city-tavern-denver",
+          "name": "Cap City Tavern",
+          "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/-eUyxUKdGkdYdRENRgoYJQ/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/cap-city-tavern-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 165,
+          "categories": [
+              {
+                  "alias": "bars",
+                  "title": "Bars"
+              },
+              {
+                  "alias": "tradamerican",
+                  "title": "American (Traditional)"
+              }
+          ],
+          "rating": 4,
+          "coordinates": {
+              "latitude": 39.7361765,
+              "longitude": -104.9904234
+          },
+          "transactions": [
+              "pickup",
+              "delivery"
+          ],
+          "price": "$$",
+          "location": {
+              "address1": "1247 Bannock St",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80204",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "1247 Bannock St",
+                  "Denver, CO 80204"
+              ]
+          },
+          "phone": "+17209318888",
+          "display_phone": "(720) 931-8888",
+          "distance": 921.9353406237149
+      },
+      {
+          "id": "kbuxn0NJYGaC9QL6RMxgWA",
+          "alias": "fat-jacks-supersubs-denver-9",
+          "name": "Fat Jack's Supersubs",
+          "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/_AU0k1RzW89i2fChFw6qww/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/fat-jacks-supersubs-denver-9?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 31,
+          "categories": [
+              {
+                  "alias": "sandwiches",
+                  "title": "Sandwiches"
+              }
+          ],
+          "rating": 3.5,
+          "coordinates": {
+              "latitude": 39.7233532369137,
+              "longitude": -104.987441673875
+          },
+          "transactions": [
+              "pickup",
+              "delivery"
+          ],
+          "price": "$",
+          "location": {
+              "address1": "450 Broadway",
+              "address2": null,
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "450 Broadway",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+13037577827",
+          "display_phone": "(303) 757-7827",
+          "distance": 719.9897599739566
+      },
+      {
+          "id": "D7-8DjWnCYFipH8Gp45G2Q",
+          "alias": "vybe-denver-denver-4",
+          "name": "VYBE Denver",
+          "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/GMpWIAWgSq1C1x1M9LQWRQ/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/vybe-denver-denver-4?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 39,
+          "categories": [
+              {
+                  "alias": "bars",
+                  "title": "Bars"
+              },
+              {
+                  "alias": "mexican",
+                  "title": "Mexican"
+              }
+          ],
+          "rating": 3.5,
+          "coordinates": {
+              "latitude": 39.732648,
+              "longitude": -104.987821
+          },
+          "transactions": [],
+          "price": "$",
+          "location": {
+              "address1": "1027 Broadway",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "1027 Broadway",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+17205738886",
+          "display_phone": "(720) 573-8886",
+          "distance": 473.47210220062385
+      },
+      {
+          "id": "B-sG-UwfdmPBbBlKcFLulg",
+          "alias": "charlie-browns-bar-and-grill-denver",
+          "name": "Charlie Brown's Bar & Grill",
+          "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/c2n0h9Ln475EbQLESx-PUA/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/charlie-browns-bar-and-grill-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 233,
+          "categories": [
+              {
+                  "alias": "lounges",
+                  "title": "Lounges"
+              },
+              {
+                  "alias": "tradamerican",
+                  "title": "American (Traditional)"
+              },
+              {
+                  "alias": "divebars",
+                  "title": "Dive Bars"
+              }
+          ],
+          "rating": 3.5,
+          "coordinates": {
+              "latitude": 39.73165,
+              "longitude": -104.98318
+          },
+          "transactions": [],
+          "price": "$$",
+          "location": {
+              "address1": "980 Grant St",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "980 Grant St",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+13038601655",
+          "display_phone": "(303) 860-1655",
+          "distance": 289.51572100837217
+      },
+      {
+          "id": "uQ87x7LUK22nO2DtgKlByA",
+          "alias": "govnrs-park-tavern-denver",
+          "name": "Govnr's Park Tavern",
+          "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/QLOZMdz6cB1Sbb42U6RWyQ/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/govnrs-park-tavern-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 351,
+          "categories": [
+              {
+                  "alias": "sportsbars",
+                  "title": "Sports Bars"
+              },
+              {
+                  "alias": "tradamerican",
+                  "title": "American (Traditional)"
+              },
+              {
+                  "alias": "venues",
+                  "title": "Venues & Event Spaces"
+              }
+          ],
+          "rating": 3.5,
+          "coordinates": {
+              "latitude": 39.72696,
+              "longitude": -104.98212
+          },
+          "transactions": [],
+          "price": "$$",
+          "location": {
+              "address1": "672 Logan St",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "672 Logan St",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+13038318605",
+          "display_phone": "(303) 831-8605",
+          "distance": 333.6189432989586
+      },
+      {
+          "id": "Ghisg_dtjnyWSQ_UO3fPig",
+          "alias": "barricudas-denver-3",
+          "name": "Barricuda's",
+          "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/hbvhTyt34kSpxgHFH6zzCg/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/barricudas-denver-3?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 184,
+          "categories": [
+              {
+                  "alias": "bars",
+                  "title": "Bars"
+              },
+              {
+                  "alias": "newamerican",
+                  "title": "American (New)"
+              },
+              {
+                  "alias": "karaoke",
+                  "title": "Karaoke"
+              }
+          ],
+          "rating": 3.5,
+          "coordinates": {
+              "latitude": 39.7333,
+              "longitude": -104.975
+          },
+          "transactions": [
+              "pickup",
+              "delivery"
+          ],
+          "price": "$$",
+          "location": {
+              "address1": "1076 Ogden St",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80218",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "1076 Ogden St",
+                  "Denver, CO 80218"
+              ]
+          },
+          "phone": "+13038608353",
+          "display_phone": "(303) 860-8353",
+          "distance": 926.918680204518
+      },
+      {
+          "id": "SqLAQyeHs3wQs7SuaVAwrA",
+          "alias": "benny-blancos-slice-of-the-bronx-denver-2",
+          "name": "Benny Blancos Slice Of The Bronx",
+          "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/lh0y8E0FM064RQ6uJL0fhg/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/benny-blancos-slice-of-the-bronx-denver-2?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 344,
+          "categories": [
+              {
+                  "alias": "pizza",
+                  "title": "Pizza"
+              },
+              {
+                  "alias": "sandwiches",
+                  "title": "Sandwiches"
+              },
+              {
+                  "alias": "chicken_wings",
+                  "title": "Chicken Wings"
+              }
+          ],
+          "rating": 3.5,
+          "coordinates": {
+              "latitude": 39.736831349796,
+              "longitude": -104.97942985563
+          },
+          "transactions": [
+              "pickup",
+              "delivery"
+          ],
+          "price": "$",
+          "location": {
+              "address1": "616 E 13th Ave",
+              "address2": null,
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "616 E 13th Ave",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+13038311346",
+          "display_phone": "(303) 831-1346",
+          "distance": 939.1215617130597
+      },
+      {
+          "id": "dybVqea5pjn-KKyD5rAjCg",
+          "alias": "dulce-vida-denver",
+          "name": "Dulce Vida",
+          "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/IDfNHVp5OViXQ0vAk7gpLw/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/dulce-vida-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 51,
+          "categories": [
+              {
+                  "alias": "tradamerican",
+                  "title": "American (Traditional)"
+              },
+              {
+                  "alias": "breakfast_brunch",
+                  "title": "Breakfast & Brunch"
+              },
+              {
+                  "alias": "beerbar",
+                  "title": "Beer Bar"
+              }
+          ],
+          "rating": 4,
+          "coordinates": {
+              "latitude": 39.7353364065781,
+              "longitude": -104.991717476782
+          },
+          "transactions": [
+              "pickup"
+          ],
+          "price": "$$",
+          "location": {
+              "address1": "1201 Cherokee St",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80204",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "1201 Cherokee St",
+                  "Denver, CO 80204"
+              ]
+          },
+          "phone": "+13039548665",
+          "display_phone": "(303) 954-8665",
+          "distance": 917.6510887747395
+      },
+      {
+          "id": "4LSF_BgZdsNTWr-nqHBeow",
+          "alias": "sexy-pizza-denver",
+          "name": "Sexy Pizza",
+          "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/IUEZlRzsh8CM6AH8VB19cw/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/sexy-pizza-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 439,
+          "categories": [
+              {
+                  "alias": "pizza",
+                  "title": "Pizza"
+              }
+          ],
+          "rating": 3.5,
+          "coordinates": {
+              "latitude": 39.73355,
+              "longitude": -104.97483
+          },
+          "transactions": [
+              "pickup",
+              "delivery"
+          ],
+          "price": "$",
+          "location": {
+              "address1": "1018 E 11th Ave",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80218",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "1018 E 11th Ave",
+                  "Denver, CO 80218"
+              ]
+          },
+          "phone": "+13038308111",
+          "display_phone": "(303) 830-8111",
+          "distance": 945.5921505288195
+      },
+      {
+          "id": "HOPIbiP5PQlpzsIefU3mYg",
+          "alias": "cosmos-pizza-denver",
+          "name": "Cosmo's Pizza",
+          "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/zPXI87E4W_QyO96pBRkG5g/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/cosmos-pizza-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 200,
+          "categories": [
+              {
+                  "alias": "pizza",
+                  "title": "Pizza"
+              }
+          ],
+          "rating": 3.5,
+          "coordinates": {
+              "latitude": 39.724879,
+              "longitude": -104.983194
+          },
+          "transactions": [
+              "pickup",
+              "delivery"
+          ],
+          "price": "$",
+          "location": {
+              "address1": "550 Grant St",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "550 Grant St",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+13037773278",
+          "display_phone": "(303) 777-3278",
+          "distance": 493.8672375233479
+      },
+      {
+          "id": "crZAP2q3R79PFPvjvK_VyQ",
+          "alias": "armidas-denver",
+          "name": "Armida's",
+          "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/rI7WbPYhvN550F_ZrGLDXA/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/armidas-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 186,
+          "categories": [
+              {
+                  "alias": "karaoke",
+                  "title": "Karaoke"
+              },
+              {
+                  "alias": "mexican",
+                  "title": "Mexican"
+              }
+          ],
+          "rating": 3,
+          "coordinates": {
+              "latitude": 39.72986,
+              "longitude": -104.98575
+          },
+          "transactions": [
+              "pickup",
+              "delivery"
+          ],
+          "price": "$",
+          "location": {
+              "address1": "840 Lincoln St",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "840 Lincoln St",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+13038378921",
+          "display_phone": "(303) 837-8921",
+          "distance": 142.52718670259506
+      },
+      {
+          "id": "bxjCHqEu_wosWbO3KMmSSw",
+          "alias": "lincoln-station-bar-denver",
+          "name": "Lincoln Station Bar",
+          "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/n2HYMsoLB63wx_uHhgunQg/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/lincoln-station-bar-denver?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 7,
+          "categories": [
+              {
+                  "alias": "desserts",
+                  "title": "Desserts"
+              },
+              {
+                  "alias": "burgers",
+                  "title": "Burgers"
+              },
+              {
+                  "alias": "salad",
+                  "title": "Salad"
+              }
+          ],
+          "rating": 2.5,
+          "coordinates": {
+              "latitude": 39.7024154663086,
+              "longitude": -104.985939025879
+          },
+          "transactions": [],
+          "price": "$$",
+          "location": {
+              "address1": "776 Lincoln St",
+              "address2": null,
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80209",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "776 Lincoln St",
+                  "Denver, CO 80209"
+              ]
+          },
+          "phone": "+18178858589",
+          "display_phone": "(817) 885-8589",
+          "distance": 137.51532356818376
+      },
+      {
+          "id": "cS3vzDZA07U_du3VeaXD0w",
+          "alias": "wendys-denver-5",
+          "name": "Wendy's",
+          "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/315WyDp93yxPGWaFhLRl0g/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/wendys-denver-5?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 27,
+          "categories": [
+              {
+                  "alias": "hotdogs",
+                  "title": "Fast Food"
+              },
+              {
+                  "alias": "burgers",
+                  "title": "Burgers"
+              }
+          ],
+          "rating": 2,
+          "coordinates": {
+              "latitude": 39.725991,
+              "longitude": -104.984491
+          },
+          "transactions": [],
+          "price": "$",
+          "location": {
+              "address1": "201 E 6th Ave",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "201 E 6th Ave",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+13038639930",
+          "display_phone": "(303) 863-9930",
+          "distance": 368.02589430053644
+      },
+      {
+          "id": "1WUrDe5WX0ci-dhl-8gbnQ",
+          "alias": "dominos-pizza-denver-2",
+          "name": "Domino's Pizza",
+          "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/jV8OALOf9E-rn-tlUB-H8A/o.jpg",
+          "is_closed": false,
+          "url": "https://www.yelp.com/biz/dominos-pizza-denver-2?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "review_count": 75,
+          "categories": [
+              {
+                  "alias": "pizza",
+                  "title": "Pizza"
+              },
+              {
+                  "alias": "chicken_wings",
+                  "title": "Chicken Wings"
+              },
+              {
+                  "alias": "sandwiches",
+                  "title": "Sandwiches"
+              }
+          ],
+          "rating": 2,
+          "coordinates": {
+              "latitude": 39.7366992550651,
+              "longitude": -104.983339454097
+          },
+          "transactions": [],
+          "price": "$",
+          "location": {
+              "address1": "1280 N Grant St",
+              "address2": "",
+              "address3": "",
+              "city": "Denver",
+              "zip_code": "80203",
+              "country": "US",
+              "state": "CO",
+              "display_address": [
+                  "1280 N Grant St",
+                  "Denver, CO 80203"
+              ]
+          },
+          "phone": "+13038314242",
+          "display_phone": "(303) 831-4242",
+          "distance": 827.7418224400174
+      }
+  ],
+  "total": 20,
+  "region": {
+      "center": {
+          "longitude": -104.9844,
+          "latitude": 39.7293
+      }
+  }
+}
