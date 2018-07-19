@@ -22,4 +22,24 @@ describe 'Lyft Service' do
       expect(actual[:last_name]).to eq("Sanchez")
     end
   end
+
+  describe '#renew_token' do
+    it 'returns an active lyft token' do
+      user = create(:user)
+
+      stub_request(:post, 'https://api.lyft.com/oauth/token').
+           to_return(status: 200, body: {
+             access_token: 'jnuf9348fnci98w3rendoirfo3in4coi',
+             token_type: 'bearer',
+             expires_in: 3600,
+             scope: 'profile offline rides.read public rides.request'
+            }.to_json, headers: {})
+
+      lyft_service = LyftService.new(user.lyft_token, user.lyft_refresh_token)
+      actual = lyft_service.renew_token
+
+      expect(actual).to be_a(String)
+      expect(actual).to eq('jnuf9348fnci98w3rendoirfo3in4coi')
+    end
+  end
 end
