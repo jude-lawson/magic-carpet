@@ -42,8 +42,6 @@ describe 'Lyft Service' do
       expect(actual).to eq('jnuf9348fnci98w3rendoirfo3in4coi')
     end
   end
-<<<<<<< HEAD
-=======
 
   describe '#call_ride' do
     it 'returns a ride status of pending' do
@@ -78,10 +76,9 @@ describe 'Lyft Service' do
 
       lyft_service = LyftService.new(user.lyft_token, user.lyft_refresh_token)
       actual = lyft_service.call_ride(origin, destination)
-      binding.pry
+
       expect(actual).to be_a(String)
       expect(actual).to eq('123')
     end
   end
->>>>>>> Adds lyft_service#call_ride method and test that stubs out the API call
 end
