@@ -28,6 +28,7 @@ RSpec.describe YelpSearcher do
       restaurants = ys.get_restaurants
 
       expect(restaurants.first).to be_a(Destination)
+      
     end
   end
 end
