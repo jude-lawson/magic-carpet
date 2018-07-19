@@ -3,6 +3,7 @@ class WebhooksController < ApplicationController
   def receive
     user = User.find_by(lyft_id: ride_info['body']['event']['passenger']['user_id'])
     ride_info = JSON.parse(request.body.read)
+    request.body.read
   end
 
   private
