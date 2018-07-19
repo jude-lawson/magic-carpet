@@ -1,7 +1,14 @@
 class DestinationHandler
   def initialize(parameters)
     @parameters = parameters
-    # parameters is hash containing the information about the user location, price range, radius, ratings, and restrictions(which should be stored as an array of tags)
+    # should be:
+    # {radius: int(in meters),
+      # latitude: decimal,
+      # longitude: decimal,
+      # price: [int,int,int],
+      # term: 'restaurants',
+      # open_now: true
+      # }
   end
 
   def find_a_restaurant
@@ -11,7 +18,7 @@ class DestinationHandler
   end
 
   def get_restaurants
-    YelpSearcher.get_restaurants(parameters)
+    YelpSearcher.new(parameters).get_restaurants
     # This is the area which would act as a router between our different destination information retrival methods and locations
   end
 

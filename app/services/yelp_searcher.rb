@@ -1,10 +1,35 @@
+require './app/services/destination'
 class YelpSearcher
-  def self.get_restaurants(parameters)
-    go_get('restaurants')
+  def initialize(parameters)
+    @parameters = parameters
   end
 
-  def self.go_get(path)
-    # this will connect to a conn method which will make the faraday call
-    %w(restaurant1 restaurant2)
+  def get_restaurants
+    get_restaurants_json[:businesses].map do |restaurant_json|
+      Destination.new(restaurant_json)
+    end
   end
+
+  def get_restaurants_json
+    JSON.parse(search_businesses.body, symbolize_names: true)
+  end
+
+  def search_businesses
+    conn.get("businesses/search") do |req|
+      parameters.each do |search, value|
+        req.params[search] = value
+      end
+    end
+  end
+
+  def conn
+    Faraday.new(:url => "https://api.yelp.com/v3/") do |faraday|
+      faraday.headers[:Authorization] = ("Bearer " + ENV["yelp_api_key"])
+      faraday.adapter Faraday.default_adapter
+    end
+  end
+
+  private 
+  attr_reader :parameters
+
 end
