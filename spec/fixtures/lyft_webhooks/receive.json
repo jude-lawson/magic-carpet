@@ -1,0 +1,73 @@
+{
+  "headers": {
+    "Accept": "*/*",
+    "Accept-Encoding": "gzip, deflate",
+    "Connection": "close",
+    "Content-Length": 1369,
+    "Content-Type": "application/json",
+    "Host": "localhost:3000",
+    "Lyft-Environment": "production",
+    "User-Agent": "lyft/webhooks v1",
+    "X-Lyft-Signature": "sha256=36kDT4a6W0glwWud/fz079/wQsHlPGie+C73ESbRf2Q="
+  },
+  "body": {
+    "event_id": "ed595871-6b2f-5b22-99ae-a848ee763701",
+    "href": "https://api.lyft.com/v1/rides/123456789",
+    "occurred_at": "2017-07-26T11:03:50+00:00",
+    "event_type": "ride.status.updated",
+    "event": {
+      "origin": {
+        "lat": 37.76734,
+        "lng": -122.40626,
+        "eta_seconds": 60,
+        "address": null
+      },
+      "passenger": {
+        "rating": "5",
+        "first_name": "John",
+        "last_name": "Doe",
+        "image_url": "https://lyft-app-img.s3.amazonaws.com/production/profilePicture/12345",
+        "user_id": "123456789"
+      },
+      "requested_at": "2017-07-26T18:03:38+00:00",
+      "route_url": "https://www.lyft.com/sr/abcdefg",
+      "ride_id": "123456789",
+      "destination": {
+        "lat": 37.77653,
+        "lng": -122.39215,
+        "eta_seconds": null,
+        "address": null
+      },
+      "driver": {
+        "phone_number": "+15555555555",
+        "rating": "4.9",
+        "first_name": "Jane",
+        "image_url": "https://lyftapi.s3.amazonaws.com/production/photos/320x200/123456_driver.jpg"
+      },
+      "can_cancel": [
+        "driver",
+        "passenger",
+        "dispatcher"
+      ],
+      "status": "accepted",
+      "location": {
+        "lat": 37.765975,
+        "bearing": 270,
+        "lng": -122.406034
+      },
+      "generated_at": "2017-07-26T18:03:50+00:00",
+      "vehicle": {
+        "color": "Red",
+        "make": "Chevy",
+        "license_plate": "ABCDEFG",
+        "image_url": "https://s3.amazonaws.com/lyftapi/production/photos/stockcarphotos/whitebg/640x400/2015/chevy/bolt/red/12345.png",
+        "year": 2015,
+        "license_plate_state": "CA",
+        "model": "Bolt"
+      },
+      "ride_type": "lyft",
+      "pricing_details_url": "https://www.lyft.com/pricing/SFO",
+      "ride_profile": "personal"
+    }
+  }
+}
