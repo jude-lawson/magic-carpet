@@ -40,7 +40,9 @@ describe 'Lyft Service' do
                           lng: -122.39227,
                           address: 'null'
                         }
-                      }.to_json, headers: {})
+                      }.to_json,
+                      headers: {}
+                    )
 
       lyft_service = LyftService.new(user)
       actual = lyft_service.call_ride(origin, destination)
@@ -61,11 +63,12 @@ describe 'Lyft Service' do
       stub_request(:get, "https://api.lyft.com/v1/cost?end_lat=37.771&end_lng=-122.39123&ride_type=lyft&start_lat=37.77663&start_lng=-122.39227").
                     with(
                       headers: {
-                        'Accept'=>'*/*',
-                        'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-                        'Authorization'=>'Bearer',
-                        'User-Agent'=>'Faraday v0.12.2'
-                      }).
+                        'Accept': '*/*',
+                        'Accept-Encoding': 'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+                        'Authorization': 'Bearer',
+                        'User-Agent': 'Faraday v0.12.2'
+                      }
+                    ).
                     to_return(status: 200,
                               body: '{
                                 "cost_estimates": [
@@ -85,7 +88,9 @@ describe 'Lyft Service' do
                                       "can_request_ride": true
                                   }
                                 ]
-                              }', headers:{})
+                              }',
+                              headers: {}
+                             )
 
       lyft_service = LyftService.new(user)
       actual = lyft_service.get_estimate(origin, destination)
