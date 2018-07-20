@@ -13,8 +13,7 @@ class LyftService
       request.headers['Content-Type'] = 'application/json'
       request.body = { ride_type: 'lyft', origin: origin, destination: destination }
     end
-    json_response = JSON.parse(response.body, symbolize_names: true)
-    @ride_id = json_response[:ride_id]
+    response.body
   end
 
   def get_estimate(origin, destination)
