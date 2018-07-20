@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate!
+
   def create
     lyft_token = request.env['omniauth.auth']['access_token']
     lyft_refresh_token = request.env['omniauth.auth']['refresh_token']

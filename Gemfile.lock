@@ -221,6 +221,7 @@ DEPENDENCIES
   faker
   faraday
   figaro
+  jwt (~> 1.5)
   listen (>= 3.0.5, < 3.2)
   omniauth-lyft
   pg (>= 0.18, < 2.0)

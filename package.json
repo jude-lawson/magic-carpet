@@ -1,0 +1,11 @@
+{
+  "name": "magic-carpet-app",
+  "engines": {
+    "node": "10.6.0"
+  },
+  "scripts": {
+    "build": "cd frontend && npm install && npm run build && cd ..",
+    "deploy": "cp -a frontend/build/. public/",
+    "postinstall": "npm run build && npm run deploy && echo 'Client Built'"
+  }
+}
