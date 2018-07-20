@@ -21,4 +21,11 @@ class Destination
     @state = information[:location][:state]
     @zip_code = information[:location][:zip_code]
   end
+
+  def location
+    {
+      latitude: latitude,
+      longitude: longitude
+    }
+  end
 end
