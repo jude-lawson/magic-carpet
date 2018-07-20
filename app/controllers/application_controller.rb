@@ -6,7 +6,6 @@ class ApplicationController < ActionController::API
   end
 
   def set_jot
-    require'pry';binding.pry
     @token ||= JsonWebToken.decode(from_http)
     rescue JWT::VerificationError, JWT::DecodeError
       raise ActionController::RoutingError.new('Not Found')
@@ -14,7 +13,6 @@ class ApplicationController < ActionController::API
   end
 
   def authenticate!
-    require'pry';binding.pry
     if set_jot || @token[:id]
       @user ||= User.find_by(id: @token[:id])
       response.headers['Authorization'] = payload 
