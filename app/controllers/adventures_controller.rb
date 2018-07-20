@@ -1,6 +1,4 @@
 class AdventuresController < ApplicationController
-  
-
   def create
     prefs = params[:preferences]
     d_h = DestinationHandler.new(prefs)
@@ -15,5 +13,4 @@ class AdventuresController < ApplicationController
       destination: dest
     }
   end
-
 end
