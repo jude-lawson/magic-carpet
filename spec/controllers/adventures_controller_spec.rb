@@ -26,6 +26,8 @@ RSpec.describe AdventuresController, type: :controller do
         'term' => 'restaurants'
       }
       post :create, params: { preferences: parameters }
+
+      expect(response.body).to have_content("destination")
     end
   end
 end

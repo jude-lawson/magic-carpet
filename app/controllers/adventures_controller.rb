@@ -5,12 +5,12 @@ class AdventuresController < ApplicationController
     prefs = params[:preferences]
     d_h = DestinationHandler.new(prefs)
     dest = d_h.find_a_restaurant
-    l_s = LyftService.new(@user)
+    # l_s = LyftService.new(@user)
 
     render json: {
-      price: l_s.get_estimate(@current_location, dest.location),
+      # price: l_s.get_estimate(@current_location, dest.location),
       destination: dest
-      }
+    }
   end
 
 end
