@@ -88,7 +88,7 @@ describe 'Lyft Service' do
       origin = { lat: 37.77663, lng: -122.39227 }
       destination = { lat: 37.771, lng: -122.39123 }
 
-      stub_request(:get, 'https://api.lyft.com/v1/cost?end_lat=37.771&end_lng=-122.39123&start_lat=37.77663&start_lng=-122.39227').
+      stub_request(:get, 'https://api.lyft.com/v1/cost?end_lat=37.771&end_lng=-122.39123&start_lat=37.77663&start_lng=-122.39227&ride_type=lyft').
         with(headers: {
                         'Accept'=>'*/*',
                         'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
@@ -97,47 +97,23 @@ describe 'Lyft Service' do
                          }).
         to_return(status: 200, body: '{
                                         "cost_estimates": [
-                                          {
-                                            "ride_type": "lyft_plus",
-                                            "estimated_duration_seconds": 913,
-                                            "estimated_distance_miles": 3.29,
-                                            "estimated_cost_cents_max": 2355,
-                                            "primetime_percentage": "25%",
-                                            "currency": "USD",
-                                            "estimated_cost_cents_min": 1561,
-                                            "display_name": "Lyft Plus",
-                                            "primetime_confirmation_token": "null",
-                                            "cost_token": "null",
-                                            "is_valid_estimate": true
-                                          },
-                                          {
-                                            "ride_type": "lyft_line",
-                                            "estimated_duration_seconds": 913,
-                                            "estimated_distance_miles": 3.29,
-                                            "estimated_cost_cents_max": 475,
-                                            "primetime_percentage": "0%",
-                                            "currency": "USD",
-                                            "estimated_cost_cents_min": 475,
-                                            "display_name": "Lyft Line",
-                                            "primetime_confirmation_token": "null",
-                                            "cost_token": "null",
-                                            "is_valid_estimate": true
-                                          },
-                                          {
-                                            "ride_type": "lyft",
-                                            "estimated_duration_seconds": 913,
-                                            "estimated_distance_miles": 3.29,
-                                            "estimated_cost_cents_max": 1755,
-                                            "primetime_percentage": "25%",
-                                            "currency": "USD",
-                                            "estimated_cost_cents_min": 1052,
-                                            "display_name": "Lyft",
-                                            "primetime_confirmation_token": "null",
-                                            "cost_token": "null",
-                                            "is_valid_estimate": true
-                                          }
+                                            {
+                                                "currency": "USD",
+                                                "ride_type": "lyft",
+                                                "display_name": "Lyft",
+                                                "primetime_percentage": "25%",
+                                                "primetime_confirmation_token": null,
+                                                "cost_token": null,
+                                                "price_quote_id": "17f87a53f3917dcc0cfc2a74b7bf267e9b97d37539a1f9b2310a81f00bc09ca4",
+                                                "is_valid_estimate": true,
+                                                "estimated_duration_seconds": 1626,
+                                                "estimated_distance_miles": 5.52,
+                                                "estimated_cost_cents_min": 1052,
+                                                "estimated_cost_cents_max": 1755,
+                                                "can_request_ride": true
+                                            }
                                         ]
-                                      }')
+                                    }')
 
       lyft_service = LyftService.new(user.lyft_token, user.lyft_refresh_token)
       actual = lyft_service.get_estimate(origin, destination)

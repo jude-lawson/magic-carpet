@@ -47,12 +47,13 @@ class LyftService
                           start_lat: origin[:lat],
                           start_lng: origin[:lng],
                           end_lat: destination[:lat],
-                          end_lng: destination[:lng]
+                          end_lng: destination[:lng],
+                          ride_type: 'lyft'
                         }
     end
-    min_price = JSON.parse(response.body)['cost_estimates'][2]['estimated_cost_cents_min']
-    max_price = JSON.parse(response.body)['cost_estimates'][2]['estimated_cost_cents_max']
-    actual = { "min_cost": min_price, "max_cost": max_price }
+    min_price = JSON.parse(response.body)['cost_estimates'].first['estimated_cost_cents_min']
+    max_price = JSON.parse(response.body)['cost_estimates'].first['estimated_cost_cents_max']
+    { "min_cost": min_price, "max_cost": max_price }
   end
 
   private
