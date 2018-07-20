@@ -37,19 +37,23 @@ class LyftService
     @ride_id = json_response[:ride_id]
   end
 
-  # def cost_estimate()
-  #   conn = Faraday.new(url: 'https://api.lyft.com') do |faraday|
-  #     faraday.adapter Faraday.default_adapter
-  #     faraday.basic_auth(ENV['LYFT_CLIENT_ID'], ENV['LYFT_CLIENT_SECRET'])
-  #   end
-  #   response = conn.post('/oauth/token') do |request|
-  #     request.headers['Content-Type'] = 'application/json'
-  #     request.headers['Cache-Control'] = 'no-cache'
-  #     request.body = { grant_type: 'refresh_token', refresh_token: @refresh_token }.to_json
-  #   end
-  #   json_response = JSON.parse(response.body, symbolize_names: true)
-  #   @user_token = json_response[:access_token]
-  # end
+  def get_estimate(origin, destination)
+    conn = Faraday.new(url: 'https://api.lyft.com') do |faraday|
+      faraday.adapter Faraday.default_adapter
+    end
+    response = conn.get('/v1/cost') do |request|
+      request.headers['Authorization'] = "Bearer #{@user_token}"
+      request.params = {
+                          start_lat: origin[:lat],
+                          start_lng: origin[:lng],
+                          end_lat: destination[:lat],
+                          end_lng: destination[:lng]
+                        }
+    end
+    min_price = JSON.parse(response.body)['cost_estimates'][2]['estimated_cost_cents_min']
+    max_price = JSON.parse(response.body)['cost_estimates'][2]['estimated_cost_cents_max']
+    actual = { "min_cost": min_price, "max_cost": max_price }
+  end
 
   private
 
