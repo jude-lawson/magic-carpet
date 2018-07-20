@@ -60,3 +60,6 @@ gem "selenium", "~> 0.2.11"
 
 # Added at 2018-07-16 15:05:57 -0600 by zacharythomas:
 gem "capybara", "~> 3.3"
+
+# Added at 2018-07-19 16:33:22 -0600 by zacharythomas:
+gem "jwt", "~> 1.5"
