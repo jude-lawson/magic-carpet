@@ -13,5 +13,4 @@ class AdventuresController < ApplicationController
       destination: dest
     }
   end
-
 end
