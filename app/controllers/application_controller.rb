@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  before_action :set_jot, :authenticate!
+  before_action :authenticate!
 
   def from_http
     request.headers["Authorization"]["token"]

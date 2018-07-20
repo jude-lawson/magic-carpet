@@ -2,8 +2,7 @@ class AdventuresController < ApplicationController
   
 
   def create
-    require'pry';binding.pry
-    prefs = params[:preferennces]
+    prefs = params[:preferences]
     d_h = DestinationHandler.new(prefs)
     dest = d_h.find_a_restaurant
     l_s = LyftService.new(@user)
