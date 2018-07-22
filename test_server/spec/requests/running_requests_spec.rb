@@ -1,6 +1,6 @@
 ENV['RACK_ENV'] = 'test'
 
-require '../../test_server'
+require_relative '../../test_server_routes'
 require 'rspec'
 require 'rack/test'
 
@@ -16,7 +16,7 @@ RSpec.describe 'Server is running' do
 
     expected_response = {
       'message' => 'All is well!'
-    }
+    }.to_json
 
     expect(last_response).to be_ok
     expect(last_response.body).to eq(expected_response)
