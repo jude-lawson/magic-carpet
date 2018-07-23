@@ -1,6 +1,6 @@
 class DestinationHandler
   def initialize(parameters)
-    @parameters = parameters
+    @parameters = parameters[:preferences]
     # should be:
     # {
         # search_settings: {

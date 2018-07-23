@@ -3,7 +3,9 @@ require 'rails_helper'
 RSpec.describe DestinationHandler do
   describe 'get_restaurants' do
     it 'should returns a list of Destination objects' do
-      parameters = {search_settings: {
+      parameters = {
+        preferences: {
+        search_settings: {
         'open_now' => true,
         'radius' => 3000,
         'latitude' => 39.7293,
@@ -18,6 +20,7 @@ RSpec.describe DestinationHandler do
           min_radius: 1000
           }
       }
+    }
 
       restaurants = File.open("./fixtures/restaurants.json")
 
@@ -30,7 +33,7 @@ RSpec.describe DestinationHandler do
           'User-Agent'=>'Faraday v0.12.2'
            }).
          to_return(status: 200, body: restaurants, headers: {})
-
+          
       dh = DestinationHandler.new(parameters)
       rests = dh.get_restaurants
       rests.each do |restaurant|
@@ -41,7 +44,8 @@ RSpec.describe DestinationHandler do
       it 'should return a single Destination from a list of destinations' do
         
         parameters ={
-          search_settings: {
+          preferences:{
+          "search_settings": {
             'open_now' => true,
             'radius' => 3000,
             'latitude' => 39.7293,
@@ -49,13 +53,15 @@ RSpec.describe DestinationHandler do
             'price' => "1,2,3",
             'term' => 'restaurants'
           },
-          restrictions: {
+          "restrictions": {
               categories: [
                 "italian",
-                "indian"],
+                "indian"
+              ],
               min_radius: 1000
               }
           }
+        }
   
         restaurants = File.open("./fixtures/restaurants.json")
   
