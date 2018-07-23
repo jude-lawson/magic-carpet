@@ -1,8 +1,8 @@
 class Filter 
   def self.remove(parameters, restaurants)
     restaurants.reject do |restaurant|
-      check_distance(parameters[:min_radius], restaurant) ||
-      check_categories(parameters[:categories], restaurant)
+      check_distance(parameters["min_radius"], restaurant) ||
+      check_categories(parameters["categories"], restaurant)
     end
   end
 
