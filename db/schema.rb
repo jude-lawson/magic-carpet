@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 2018_07_23_022628) do
     t.string "first_name"
     t.string "last_name"
     t.integer "number_of_adventures"
-    t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "setting_id"
