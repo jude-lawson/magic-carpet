@@ -1,6 +1,6 @@
 class DestinationHandler
   def initialize(parameters)
-    @parameters = parameters["preferences"]
+    @parameters = parameters[:preferences]
     # should be:
     # {
         # search_settings: {
@@ -28,8 +28,8 @@ class DestinationHandler
   end
 
   def get_restaurants
-    restaurants = YelpSearcher.new(parameters["search_settings"]).get_restaurants
-    Filter.remove(parameters["restrictions"], restaurants)
+    restaurants = YelpSearcher.new(parameters[:search_settings]).get_restaurants
+    Filter.remove(parameters[:restrictions], restaurants)
     # This is the area which would act as a router between our different destination information retrival methods and locations
   end
 

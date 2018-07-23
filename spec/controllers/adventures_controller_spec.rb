@@ -33,7 +33,7 @@ RSpec.describe AdventuresController, type: :controller do
             min_radius: 1000
             }
         }
-      post :create, params: { preferences: parameters }
+      post :create, body: { preferences: parameters }.to_json
 
       expect(response.body).to have_content("destination")
     end
