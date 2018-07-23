@@ -10,19 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_18_100037) do
+ActiveRecord::Schema.define(version: 2018_07_23_022628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "users", force: :cascade do |t|
-    t.string "lyft_id"
-    t.string "first_name"
-    t.string "last_name"
-    t.string "lyft_token"
-    t.string "lyft_refresh_token"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table "settings", force: :cascade do |t|
+    t.integer "radius"
+    t.string "price_range"
+    t.string "rating"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "number_of_adventures"
+    t.string "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "setting_id"
+    t.index ["setting_id"], name: "index_users_on_setting_id"
+  end
+
+  add_foreign_key "users", "settings"
 end
