@@ -5,8 +5,8 @@ RSpec.describe AdventuresController, type: :controller do
     it 'should return the price and destination in json' do
       restaurants = File.open("./fixtures/restaurants.json")
 
-      stub_request(:get, "https://api.yelp.com/v3/businesses/search?latitude=39.7293&longitude=-104.9844&open_now=true&price=1,2,3&radius=1000&term=restaurants")
-      .with(
+      stub_request(:get, "https://api.yelp.com/v3/businesses/search?latitude=39.7293&longitude=-104.9844&open_now=true&price=1,2,3&radius=3000&term=restaurants").
+         with(
            headers: {
           'Accept'=>'*/*',
           'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
@@ -18,13 +18,21 @@ RSpec.describe AdventuresController, type: :controller do
       user = create(:user)
       @request.headers["Authorization"] = {"token" => JsonWebToken.encode({id: user.id}) }
       parameters ={
-        'open_now' => true,
-        'radius' => 1000,
-        'latitude' => 39.7293,
-        'longitude' => -104.9844,
-        'price' => "1,2,3",
-        'term' => 'restaurants'
-      }
+        search_settings: {
+          'open_now' => true,
+          'radius' => 3000,
+          'latitude' => 39.7293,
+          'longitude' => -104.9844,
+          'price' => "1,2,3",
+          'term' => 'restaurants'
+        },
+        restrictions: {
+            categories: [
+              "italian",
+              "indian"],
+            min_radius: 1000
+            }
+        }
       post :create, params: { preferences: parameters }
 
       expect(response.body).to have_content("destination")
