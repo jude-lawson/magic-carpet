@@ -18,13 +18,21 @@ RSpec.describe AdventuresController, type: :controller do
       user = create(:user)
       @request.headers["Authorization"] = {"token" => JsonWebToken.encode({id: user.id}) }
       parameters ={
-        'open_now' => true,
-        'radius' => 1000,
-        'latitude' => 39.7293,
-        'longitude' => -104.9844,
-        'price' => "1,2,3",
-        'term' => 'restaurants'
-      }
+        search_settings: {
+          'open_now' => true,
+          'radius' => 1000,
+          'latitude' => 39.7293,
+          'longitude' => -104.9844,
+          'price' => "1,2,3",
+          'term' => 'restaurants'
+        },
+        restrictions: {
+            categories: [
+              "italian",
+              "indian"],
+            min_radius: 1000
+            }
+        }
       post :create, params: { preferences: parameters }
 
       expect(response.body).to have_content("destination")
