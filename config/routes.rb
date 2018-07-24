@@ -3,4 +3,10 @@ Rails.application.routes.draw do
   get '/auth/lyft', as: :lyft_login
   get '/auth/lyft/callback', to: 'users#create'
   resources :users, only: [:edit]
+
+  namespace :api do
+    namespace :v1 do
+      post '/rides/new', to: 'rides#create'
+    end
+  end
 end
