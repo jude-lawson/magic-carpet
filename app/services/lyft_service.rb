@@ -16,6 +16,7 @@ class LyftService
   def get_cost(origin, destination)
     conn.get('/v1/cost') do |request|
       request.headers['Authorization'] = "Bearer #{@user_token}"
+      request.headers['Content-Type'] = 'application/json'
       request.params = {
         start_lat: origin[:lat],
         start_lng: origin[:lng],
