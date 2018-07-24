@@ -10,10 +10,6 @@ class LyftOmniauthService
   end
 
   def renew_token
-    conn = Faraday.new(url: 'https://api.lyft.com') do |faraday|
-      faraday.adapter Faraday.default_adapter
-      faraday.basic_auth(ENV['LYFT_CLIENT_ID'], ENV['LYFT_CLIENT_SECRET'])
-    end
     response = conn.post('/oauth/token') do |request|
       request.headers['Content-Type'] = 'application/json'
       request.headers['Cache-Control'] = 'no-cache'
@@ -23,7 +19,15 @@ class LyftOmniauthService
     @user_token = json_response[:access_token]
   end
 
+  def conn
+    Faraday.new(url: 'https://api.lyft.com') do |faraday|
+      faraday.adapter Faraday.default_adapter
+      faraday.basic_auth(ENV['LYFT_CLIENT_ID'], ENV['LYFT_CLIENT_SECRET'])
+    end
+  end
+
   private
+
     def get_json(url)
       response = Faraday.get(url, nil, authorization: "Bearer #{@user_token}")
       JSON.parse(response.body, symbolize_names: true)
