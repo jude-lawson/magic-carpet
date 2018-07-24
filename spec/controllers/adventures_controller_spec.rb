@@ -10,7 +10,7 @@ RSpec.describe AdventuresController, type: :controller do
            headers: {
           'Accept'=>'*/*',
           'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-          'Authorization'=>'Bearer CJO1wLSD-ZirOvL0ViX92AA4zmZdAdgEy8Gs0C-1UzgfmSt7NJ_QYrEjAx6ZA6SOUnNYpQgXK3MiuaOa-gfFkRWo00l0ehR0E_9uEmuSHXOQhEL0wT9t3H8nCvZPW3Yx',
+          'Authorization'=>"Bearer #{ENV['yelp_api_key']}",
           'User-Agent'=>'Faraday v0.12.2'
            }).
          to_return(status: 200, body: restaurants, headers: {})

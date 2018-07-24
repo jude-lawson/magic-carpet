@@ -3,4 +3,14 @@ Rails.application.routes.draw do
   get '/auth/lyft', as: :lyft_login
   get '/auth/lyft/callback', to: 'users#create'
   resources :users, only: [:edit]
+
+  namespace :api do
+    namespace :v1 do
+      post '/rides/new', to: 'rides#create'
+
+      # Test routes for verifying proper mocking in test environment
+      get '/test', to: 'test#index'
+      post '/test', to: 'test#create'
+    end
+  end
 end
