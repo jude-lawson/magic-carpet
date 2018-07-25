@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   skip_before_action :authenticate!
 
   def create
+    require'pry';binding.pry
     lyft_token = request.env['omniauth.auth']['access_token']
     lyft_refresh_token = request.env['omniauth.auth']['refresh_token']
     lyft_omniauth_service = LyftOmniauthService.new(lyft_token, lyft_refresh_token)
