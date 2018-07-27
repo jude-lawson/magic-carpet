@@ -2,7 +2,7 @@ class ApplicationController < ActionController::API
   before_action :authenticate!
 
   def from_http
-    request.headers["Authorization"]["token"]
+    request.headers["payload"]
   end
 
   def set_jot
@@ -15,7 +15,7 @@ class ApplicationController < ActionController::API
   def authenticate!
     if set_jot || @token[:id]
       @user ||= User.find_by(id: @token[:id])
-      response.headers['Authorization'] = payload 
+      response.headers['Authorization'] = payload
     else
       raise ActionController::RoutingError.new('Not Found')
     end
