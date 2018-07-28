@@ -34,4 +34,21 @@ class LyftService
     max_price = JSON.parse(response.body)['cost_estimates'].first['estimated_cost_cents_max']
     { "min_cost": min_price, "max_cost": max_price }
   end
+
+  def cancel_ride(ride_id)
+    conn = Faraday.new(url: 'https://api.lyft.com') do |faraday|
+      faraday.adapter Faraday.default_adapter
+    end
+    response = conn.post("/v1/rides/#{ride_id}/cancel") do |request|
+      request.headers['Authorization'] = "Bearer #{@user_token}"
+      request.headers['Content-Type'] = 'application/json'
+    end
+    if response.status == 204
+      'Your ride has been successfully cancelled.'
+    elsif response.status == 400
+      cancel_fee = JSON.parse(response.body)['amount']
+      cancel_token = JSON.parse(response.body)['token']
+      { "cancel_fee": cancel_fee, "cancel_token": cancel_token }
+    end
+  end
 end
