@@ -1,7 +1,7 @@
 class AdventuresController < ApplicationController
   def create
-    prefs = params[:preferences]
-    d_h = DestinationHandler.new(prefs)
+    prefs = JSON.parse(request.body.string, symbolize_names: true)
+    d_h = DestinationHandler.new(prefs) 
     dest = d_h.find_a_restaurant
     # These methods require LyftService to take a user object
     # l_s = LyftService.new(@user)
