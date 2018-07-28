@@ -99,4 +99,32 @@ describe 'Lyft Service' do
       expect(actual[:max_cost]).to eq(1755)
     end
   end
+
+  describe '#cancel_ride' do
+    context 'No cancellation fee incurred' do
+      it 'cancels the ride and returns cancel confirmation' do
+        user = create(:user)
+        ride_id = 1
+
+        stub_request(:post, "https://api.lyft.com/v1/rides/#{ride_id}/cancel").
+                      with(
+                        headers: {
+                          'Content-Type': 'application/json',
+                          'Authorization': 'Bearer',
+                          'User-Agent': 'Faraday v0.12.2'
+                        }
+                      ).
+                      to_return(
+                                status: 204,
+                                body: 'No Content',
+                                headers: {}
+                               )
+
+        lyft_service = LyftService.new(user)
+        actual = lyft_service.cancel_ride(ride_id)
+
+        expect(actual).to eq('Your ride has been successfully cancelled.')
+      end
+    end
+  end
 end
