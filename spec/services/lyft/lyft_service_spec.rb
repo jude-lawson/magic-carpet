@@ -99,4 +99,72 @@ describe 'Lyft Service' do
       expect(actual[:max_cost]).to eq(1755)
     end
   end
+
+  describe '#cancel_ride' do
+    context 'No cancellation fee incurred' do
+      it 'cancels the ride and returns cancel confirmation' do
+        user = create(:user)
+        ride_id = 1
+
+        stub_request(:post, "https://api.lyft.com/v1/rides/#{ride_id}/cancel").
+                      with(
+                        headers: {
+                          'Content-Type': 'application/json',
+                          'Authorization': 'Bearer',
+                          'User-Agent': 'Faraday v0.12.2'
+                        }
+                      ).
+                      to_return(
+                                status: 204,
+                                body: 'No Content',
+                                headers: {}
+                               )
+
+        lyft_service = LyftService.new(user)
+        actual = lyft_service.cancel_ride(ride_id)
+
+        expect(actual).to eq('Your ride has been successfully cancelled.')
+      end
+    end
+
+    context 'A cancellation fee is incurred' do
+      it 'returns the cancellation fee amount and cancellation token' do
+        user = create(:user)
+        ride_id = 1
+
+        stub_request(:post, "https://api.lyft.com/v1/rides/#{ride_id}/cancel").
+                      with(
+                        headers: {
+                          'Content-Type': 'application/json',
+                          'Authorization': 'Bearer',
+                          'User-Agent': 'Faraday v0.12.2'
+                        }
+                      ).
+                      to_return(
+                        status: 400,
+                        body: '{
+                                "error": "cancel_confirmation_required",
+                                "error_detail": [
+                                  {
+                                    "cancel_confirmation": "a valid cancel_confirmation_token is required to cancel a ride"
+                                  }
+                                ],
+                                "amount": 500,
+                                "currency": "USD",
+                                "token": "656a91d",
+                                "token_duration": 60
+                              }',
+                        headers: {
+                          'Content-Type': 'application/json'
+                        }
+                      )
+
+        lyft_service = LyftService.new(user)
+        actual = lyft_service.cancel_ride(ride_id)
+
+        expect(actual[:cancel_fee]).to eq(500)
+        expect(actual[:cancel_token]).to eq('656a91d')
+      end
+    end
+  end
 end
