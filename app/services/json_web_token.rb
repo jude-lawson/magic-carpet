@@ -5,9 +5,9 @@ class JsonWebToken
   end
 
   def self.decode(payload)
-    return HashWithIndifferentAccess.new(JWT.decode(payload, ENV['jwt_token'],'HS256').first)
-    rescue
-      nil
+    return HashWithIndifferentAccess.new(JWT.decode(payload, ENV['jwt_token'], 'HS256'))
+    # rescue
+    #   nil
   end
 
 end
