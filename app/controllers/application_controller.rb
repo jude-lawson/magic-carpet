@@ -22,6 +22,10 @@ class ApplicationController < ActionController::API
   end
 
   def payload(user)
+    puts(set_payload(user))
+    encoded = JsonWebToken.encode(set_payload(user))
+    puts(encoded)
+    puts(JsonWebToken.decode(encoded))
     JsonWebToken.encode(set_payload(user))
   end
 
