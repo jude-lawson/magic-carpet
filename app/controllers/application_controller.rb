@@ -9,25 +9,35 @@ class ApplicationController < ActionController::API
     @token ||= JsonWebToken.decode(from_http)
     rescue JWT::VerificationError, JWT::DecodeError
       raise ActionController::RoutingError.new('Not Found')
-    end
+    
   end
 
   def authenticate!
     if set_jot || @token[:id]
       @user ||= User.find_by(id: @token[:id])
-      response.headers['Authorization'] = payload
+      response.headers['Authorization'] = payload(@user) if @user
     else
       raise ActionController::RoutingError.new('Not Found')
     end
   end
 
-  def payload
-    if @user
-    {
-      jwt: JsonWebToken.encode({id: @user.id})
-    }
+  def payload(user)
+    JsonWebToken.encode(set_payload(user))
   end
 
-
+  def set_payload(user)
+    {
+      id: user.id,
+      ride_count: user.ride_count,
+      settings: {
+        max_radius: user.setting.max_radius,
+        min_radius: user.setting.min_radius,
+        price: user.setting.price,
+        min_rating: user.setting.min_rating
+      }
+    }.to_json
+  end
 
 end
+
+

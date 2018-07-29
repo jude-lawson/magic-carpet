@@ -3,9 +3,12 @@ class Api::V1::UsersController < ApplicationController
 
   def create
     keys = JsonWebToken.decode(request.headers["payload"])
-    require'pry';binding.pry
-    user = User.create!
-    require'pry';binding.pry
-    render json: user
+    if keys[:token]
+      user = User.create!
+      response.headers['Authorization'] = payload(user)
+      response.headers['thing'] = ENV["jwt_token"]
+    else 
+      raise ActionController::RoutingError.new('Not Found')
+    end
   end
 end
