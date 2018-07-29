@@ -65,3 +65,6 @@ gem "capybara", "~> 3.3"
 
 # Added at 2018-07-19 16:33:22 -0600 by zacharythomas:
 gem "jwt", "~> 1.5"
+
+# Added at 2018-07-27 11:04:54 -0600 by zacharythomas:
+gem "active_model_serializers", "~> 0.10.7"
