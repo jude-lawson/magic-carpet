@@ -1,13 +1,16 @@
 class JsonWebToken
 
   def self.encode(payload)
-    JWT.encode(payload, ENV['jwt_token'], 'HS256')
+    # JWT.encode(payload, ENV['jwt_token'], 'HS384', { typ: "JWT"})
+    payload
   end
 
   def self.decode(payload)
-    return HashWithIndifferentAccess.new(JWT.decode(payload, ENV['jwt_token'],'HS256').first)
-    rescue
-      nil
+    # decoded_string = JWT.decode(payload, ENV['jwt_token'], 'HS384', { typ: "JWT"}).first
+    # decoded_json = JSON.parse(decoded_string)
+    # HashWithIndifferentAccess.new(decoded_json)
+    HashWithIndifferentAccess.new(payload)
+
   end
 
 end
