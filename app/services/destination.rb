@@ -1,4 +1,5 @@
 class Destination
+  
   attr_reader :name,
               :rating,
               :categories,
