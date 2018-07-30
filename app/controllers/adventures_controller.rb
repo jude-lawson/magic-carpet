@@ -4,13 +4,14 @@ class AdventuresController < ApplicationController
     d_h = DestinationHandler.new(prefs)
     dest = d_h.find_a_restaurant
     puts("sending them to #{dest.name}")
-    # These methods require LyftService to take a user object
-    # l_s = LyftService.new(@user)
-
+    current_location = {
+      latitude: prefs[:search_settings][:latitude], 
+      longitude: prefs[:search_settings][:longitude] 
+    }
+    l_s = LyftService.new(@user)
     render json: {
-      # These methods require LyftService to take a user object
 
-      # price: l_s.get_estimate(@current_location, dest.location),
+      price_range: l_s.get_estimate(current_location, dest.location),
       destination: dest
     }
   end
