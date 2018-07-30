@@ -43,10 +43,10 @@ class LyftService
         request.headers['Authorization'] = "Bearer #{@user_token}"
         request.headers['Content-Type'] = 'application/json'
         request.params = {
-          start_lat: origin[:lat],
-          start_lng: origin[:lng],
-          end_lat: destination[:lat],
-          end_lng: destination[:lng],
+          start_lat: origin[:latitude],
+          start_lng: origin[:longitude],
+          end_lat: destination[:latitude],
+          end_lng: destination[:longitude],
           ride_type: 'lyft'
         }
       end
