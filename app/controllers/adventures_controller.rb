@@ -4,7 +4,6 @@ class AdventuresController < ApplicationController
     d_h = DestinationHandler.new(prefs)
     dest = d_h.find_a_restaurant
     puts("sending them to #{dest.name}")
-    require'pry';binding.pry
     # These methods require LyftService to take a user object
     # l_s = LyftService.new(@user)
 
