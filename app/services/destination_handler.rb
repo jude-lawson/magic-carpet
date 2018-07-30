@@ -1,6 +1,5 @@
 class DestinationHandler
   def initialize(parameters)
-    require'pry';binding.pry
     @parameters = parameters
     # should be:
     # {

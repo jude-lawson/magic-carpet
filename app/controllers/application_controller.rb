@@ -9,7 +9,6 @@ class ApplicationController < ActionController::API
     @token ||= JsonWebToken.decode(from_http)
     rescue JWT::VerificationError, JWT::DecodeError
       raise ActionController::RoutingError.new('Not Found')
-    
   end
 
   def authenticate!
