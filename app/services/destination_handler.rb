@@ -1,16 +1,16 @@
 class DestinationHandler
   def initialize(parameters)
-    @parameters = parameters[:preferences]
+    @parameters = parameters
     # should be:
     # {
-        # search_settings: {
-          # radius: int(in meters),
-          # latitude: decimal,
-          # longitude: decimal,
-          # price: [int,int,int],
-          # term: 'restaurants',
-          # open_now: true
-        # }
+      # search_settings: {
+        # radius: int(in meters),
+        # latitude: decimal,
+        # longitude: decimal,
+        # price: [int,int,int],
+        # term: 'restaurants',
+        # open_now: true
+      # }
       # restrictions: {
       #   categories : [
       #     "italian",

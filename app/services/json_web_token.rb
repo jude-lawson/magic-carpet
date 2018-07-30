@@ -9,7 +9,7 @@ class JsonWebToken
     # decoded_string = JWT.decode(payload, ENV['jwt_token'], 'HS384', { typ: "JWT"}).first
     # decoded_json = JSON.parse(decoded_string)
     # HashWithIndifferentAccess.new(decoded_json)
-    HashWithIndifferentAccess.new(payload)
+    HashWithIndifferentAccess.new(JSON.parse(payload))
 
   end
 

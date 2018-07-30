@@ -10,18 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_27_163214) do
+ActiveRecord::Schema.define(version: 2018_07_30_053625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "settings", force: :cascade do |t|
     t.integer "max_radius"
-    t.string "price"
     t.integer "min_radius"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "min_rating"
+    t.integer "min_rating", default: 1
+    t.integer "max_rating", default: 5
+    t.integer "max_price", default: 4
+    t.integer "min_price", default: 1
   end
 
   create_table "users", force: :cascade do |t|
