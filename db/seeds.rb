@@ -5,5 +5,4 @@ Setting.create(
   max_radius: 4000,
   min_radius: 1000,
   min_rating: 0,
-  price: '1,2,3,4'
 )
