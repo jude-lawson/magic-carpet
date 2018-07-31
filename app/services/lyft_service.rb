@@ -21,18 +21,20 @@ class LyftService
   end
 
   def cancel_ride_request(ride_id)
-    conn.post("/v1/rides/#{ride_id}/cancel") do |request|
+    response = conn.post("/v1/rides/#{ride_id}/cancel") do |request|
       request.headers['Authorization'] = "Bearer #{@user_token}"
       request.headers['Content-Type'] = 'application/json'
     end
+    response.body
   end
 
   def cancel_ride(ride_id, cost_token)
-    conn.post("/v1/rides/#{ride_id}/cancel") do |request|
+    response = conn.post("/v1/rides/#{ride_id}/cancel") do |request|
       request.headers['Authorization'] = "Bearer #{@user_token}"
       request.headers['Content-Type'] = 'application/json'
-      request.body = { cancel_confirmation_token: cost_token.to_s }.to_json
+      request.body = { cancel_confirmation_token: cost_token.to_s }
     end
+    response.body
   end
 
   private

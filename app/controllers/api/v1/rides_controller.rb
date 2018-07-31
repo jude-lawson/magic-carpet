@@ -7,10 +7,10 @@ class Api::V1::RidesController < ApplicationController
   end
 
   def edit
-    response = LyftService.cancel_ride_request(headers['ride_id'])
-    render json: response
-    # mock_info = File.read('fixtures/lyft_cancel_response_failure.json')
-    # render json: mock_info
+    # response = LyftService.cancel_ride_request(headers['ride_id'])
+    # render json: response
+    mock_info = File.read('fixtures/lyft_cancel_response_failure.json')
+    render json: mock_info
   end
 
   def destroy

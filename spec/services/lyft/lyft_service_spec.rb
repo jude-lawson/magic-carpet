@@ -123,7 +123,7 @@ describe 'Lyft Service' do
         lyft_service = LyftService.new(user)
         actual = lyft_service.cancel_ride_request(ride_id)
 
-        expect(actual.body).to eq("")
+        expect(actual).to eq("")
       end
     end
 
@@ -162,7 +162,7 @@ describe 'Lyft Service' do
         lyft_service = LyftService.new(user)
         actual = lyft_service.cancel_ride_request(ride_id)
 
-        parsed_actual = JSON.parse(actual.body)
+        parsed_actual = JSON.parse(actual)
 
         expect(parsed_actual['amount']).to eq(500)
         expect(parsed_actual['token']).to eq('656a91d')
