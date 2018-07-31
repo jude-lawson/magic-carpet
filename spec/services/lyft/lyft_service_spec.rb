@@ -44,8 +44,7 @@ describe 'Lyft Service' do
                       headers: {}
                     )
 
-      lyft_service = LyftService.new(user)
-      actual = lyft_service.call_ride(origin, destination)
+      actual = LyftService.call_ride(origin, destination)
 
       expect(actual).to be_a(String)
       expect(actual).to include('status')
@@ -92,8 +91,7 @@ describe 'Lyft Service' do
                               headers: {}
                              )
 
-      lyft_service = LyftService.new(user)
-      actual = lyft_service.get_estimate(origin, destination)
+      actual = LyftService.get_estimate(origin, destination)
 
       expect(actual[:min_cost]).to eq(1052)
       expect(actual[:max_cost]).to eq(1755)
@@ -105,12 +103,13 @@ describe 'Lyft Service' do
       it 'cancels the ride and returns 204 status' do
         user = create(:user)
         ride_id = 1
+        lyft_token = 'cuhf08214inf[rc09efn4j0c3r9enci]ojfejnoih42'
 
         stub_request(:post, "https://api.lyft.com/v1/rides/#{ride_id}/cancel").
                       with(
                         headers: {
                           'Content-Type': 'application/json',
-                          'Authorization': 'Bearer',
+                          'Authorization': "Bearer #{lyft_token}",
                           'User-Agent': 'Faraday v0.12.2'
                         }
                       ).
@@ -120,8 +119,7 @@ describe 'Lyft Service' do
                                 headers: {}
                                )
 
-        lyft_service = LyftService.new(user)
-        actual = lyft_service.cancel_ride_request(ride_id)
+        actual = LyftService.cancel_ride_request(ride_id, lyft_token)
 
         expect(actual).to eq('')
       end
@@ -131,12 +129,13 @@ describe 'Lyft Service' do
       it 'returns the cancellation fee amount and cancellation token' do
         user = create(:user)
         ride_id = 1
+        lyft_token = '849hrfnh928hi3ind20894jrnfu938h04tfr'
 
         stub_request(:post, "https://api.lyft.com/v1/rides/#{ride_id}/cancel").
                       with(
                         headers: {
                           'Content-Type': 'application/json',
-                          'Authorization': 'Bearer',
+                          'Authorization':  "Bearer #{lyft_token}",
                           'User-Agent': 'Faraday v0.12.2'
                         }
                       ).
@@ -159,8 +158,7 @@ describe 'Lyft Service' do
                         }
                       )
 
-        lyft_service = LyftService.new(user)
-        actual = lyft_service.cancel_ride_request(ride_id)
+        actual = LyftService.cancel_ride_request(ride_id, lyft_token)
 
         parsed_actual = JSON.parse(actual)
 
@@ -175,12 +173,13 @@ describe 'Lyft Service' do
       user = create(:user)
       ride_id = 1
       cost_token = 'nrfie4idmd'
+      lyft_token = 'fu498rnfrcv9r0834h2pinr34fcg04j2fmoenob'
 
       stub_request(:post, "https://api.lyft.com/v1/rides/#{ride_id}/cancel").
                     with(
                       headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': 'Bearer',
+                        'Authorization':  "Bearer #{lyft_token}",
                         'User-Agent': 'Faraday v0.12.2'
                       },
                       body: {
@@ -193,8 +192,7 @@ describe 'Lyft Service' do
                               headers: {}
                              )
 
-      lyft_service = LyftService.new(user)
-      actual = lyft_service.cancel_ride(ride_id, cost_token)
+      actual = LyftService.cancel_ride(ride_id, cost_token, lyft_token)
 
       expect(actual).to eq('')
     end
