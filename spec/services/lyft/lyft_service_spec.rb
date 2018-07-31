@@ -100,7 +100,7 @@ describe 'Lyft Service' do
     end
   end
 
-  describe '#cancel_ride' do
+  describe '#cancel_ride_request' do
     context 'No cancellation fee incurred' do
       it 'cancels the ride and returns cancel confirmation' do
         user = create(:user)
@@ -121,9 +121,9 @@ describe 'Lyft Service' do
                                )
 
         lyft_service = LyftService.new(user)
-        actual = lyft_service.cancel_ride(ride_id)
+        actual = lyft_service.cancel_ride_request(ride_id)
 
-        expect(actual).to eq('Your ride has been successfully cancelled.')
+        expect(actual.body).to eq("")
       end
     end
 
@@ -160,10 +160,12 @@ describe 'Lyft Service' do
                       )
 
         lyft_service = LyftService.new(user)
-        actual = lyft_service.cancel_ride(ride_id)
+        actual = lyft_service.cancel_ride_request(ride_id)
 
-        expect(actual[:cancel_fee]).to eq(500)
-        expect(actual[:cancel_token]).to eq('656a91d')
+        parsed_actual = JSON.parse(actual.body)
+
+        expect(parsed_actual['amount']).to eq(500)
+        expect(parsed_actual['token']).to eq('656a91d')
       end
     end
   end
