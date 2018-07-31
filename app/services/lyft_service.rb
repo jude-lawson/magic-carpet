@@ -32,7 +32,7 @@ class LyftService
     response = conn.post("/v1/rides/#{ride_id}/cancel") do |request|
       request.headers['Authorization'] = "Bearer #{@user_token}"
       request.headers['Content-Type'] = 'application/json'
-      request.body = { cancel_confirmation_token: cost_token.to_s }
+      request.body = { cancel_confirmation_token: cost_token.to_s }.to_json
     end
     response.body
   end
