@@ -4,14 +4,9 @@ class AdventuresController < ApplicationController
     d_h = DestinationHandler.new(prefs)
     dest = d_h.find_a_restaurant
     puts("sending them to #{dest.name}")
-    # These methods require LyftService to take a user object
-    # l_s = LyftService.new(@user)
-
-    render json: {
-      # These methods require LyftService to take a user object
-
-      # price: l_s.get_estimate(@current_location, dest.location),
-      destination: dest
-    }
+    response = LyftService.get_estimate(headers['origin'], headers['destination'])
+    # destination = { destination: dest }.to_json
+    render json: response
+    # , destination
   end
 end
