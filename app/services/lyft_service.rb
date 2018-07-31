@@ -4,10 +4,10 @@ class LyftService
     @user = user
   end
 
-  def call_ride(origin, destination, lyft_token, cost_token=nil)
+  def call_ride(origin, destination, cost_token=nil)
     if cost_token
       response = conn.post('/v1/rides') do |request|
-        request.headers['Authorization'] = "Bearer #{lyft_token}"
+        request.headers['Authorization'] = "Bearer #{@user.api_token}"
         request.headers['Content-Type'] = 'application/json'
         request.body = { ride_type: 'lyft', origin: origin, destination: destination, token: cost_token }
       end
@@ -46,9 +46,9 @@ class LyftService
       end
     end
 
-    def get_cost(origin, destination, lyft_token)
+    def get_cost(origin, destination)
       conn.get('/v1/cost') do |request|
-        request.headers['Authorization'] = "Bearer #{lyft_token}"
+        request.headers['Authorization'] = "Bearer #{@user.api_token}"
         request.headers['Content-Type'] = 'application/json'
         request.params = {
           start_lat: origin[:latitude],
@@ -60,9 +60,9 @@ class LyftService
       end
     end
 
-    def cancel_ride_request(ride_id, lyft_token)
+    def cancel_ride_request(ride_id)
       conn.post("/v1/rides/#{ride_id}/cancel") do |request|
-        request.headers['Authorization'] = "Bearer #{lyft_token}"
+        request.headers['Authorization'] = "Bearer #{@user.api_token}"
         request.headers['Content-Type'] = 'application/json'
       end
     end

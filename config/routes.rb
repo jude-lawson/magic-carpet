@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      post '/rides/new', to: 'rides#create'
+      post 'rides', to: 'rides#create'
       post 'users', to: 'users#create'
       # Test routes for verifying proper mocking in test environment
       get '/test', to: 'test#index'
