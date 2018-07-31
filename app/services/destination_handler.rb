@@ -1,4 +1,4 @@
-class DestinationHandler
+ class DestinationHandler
   def initialize(parameters)
     @parameters = parameters[:preferences]
     # should be:

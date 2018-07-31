@@ -20,14 +20,18 @@ class LyftService
     { "min_cost": min_price, "max_cost": max_price }
   end
 
-  def cancel_ride(ride_id)
-    response = cancel_ride_request(ride_id)
-    if response.status == 204
-      'Your ride has been successfully cancelled.'
-    elsif response.status == 400
-      cancel_fee = JSON.parse(response.body)['amount']
-      cancel_token = JSON.parse(response.body)['token']
-      { "cancel_fee": cancel_fee, "cancel_token": cancel_token }
+  def cancel_ride_request(ride_id)
+    conn.post("/v1/rides/#{ride_id}/cancel") do |request|
+      request.headers['Authorization'] = "Bearer #{@user_token}"
+      request.headers['Content-Type'] = 'application/json'
+    end
+  end
+
+  def cancel_ride(ride_id, cost_token)
+    conn.post("/v1/rides/#{ride_id}/cancel") do |request|
+      request.headers['Authorization'] = "Bearer #{@user_token}"
+      request.headers['Content-Type'] = 'application/json'
+      request.body = { cancel_confirmation_token: cost_token.to_s }.to_json
     end
   end
 
@@ -49,13 +53,6 @@ class LyftService
           end_lng: destination[:lng],
           ride_type: 'lyft'
         }
-      end
-    end
-
-    def cancel_ride_request(ride_id)
-      conn.post("/v1/rides/#{ride_id}/cancel") do |request|
-        request.headers['Authorization'] = "Bearer #{@user_token}"
-        request.headers['Content-Type'] = 'application/json'
       end
     end
 end
