@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     namespace :v1 do
       post 'rides', to: 'rides#create'
       post 'users', to: 'users#create'
+      post 'cancel', to: 'rides#cancel'
+      post 'confirm', to: 'rides#destroy'
+
       # Test routes for verifying proper mocking in test environment
       get '/test', to: 'test#index'
       post '/test', to: 'test#create'

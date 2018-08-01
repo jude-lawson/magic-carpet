@@ -1,0 +1,12 @@
+{
+  "error": "cancel_confirmation_required",
+  "error_detail": [
+    {
+      "cancel_confirmation": "a valid cancel_confirmation_token is required to cancel a ride"
+    }
+  ],
+  "amount": 500,
+  "currency": "USD",
+  "token": "656a91d",
+  "token_duration": 60
+}
