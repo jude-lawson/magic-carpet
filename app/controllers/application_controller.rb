@@ -14,6 +14,8 @@ class ApplicationController < ActionController::API
   def authenticate!
     if set_jot || @token[:id]
       @user ||= User.find_by(id: @token[:id])
+      @user.api_token=(@token[:token])
+      @user.refresh_token=(@token[:refresh_token])
       response.headers['Authorization'] = payload(@user) if @user
     else
       raise ActionController::RoutingError.new('Not Found')
@@ -44,5 +46,3 @@ class ApplicationController < ActionController::API
   end
 
 end
-
-
