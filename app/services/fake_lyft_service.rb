@@ -1,18 +1,12 @@
-class LyftService
+class FakeLyftService
 
   def initialize(user)
     @user = user
   end
 
   def call_ride(origin, destination, cost_token)
-    response = conn.post('/v1/rides') do |request|
-      request.headers['Authorization'] = "Bearer #{@user.api_token}"
-      request.headers['Content-Type'] = 'application/json'
-      request.body = { ride_type: 'lyft', origin: origin, destination: destination, token: cost_token }
-    end
-    JSON.parse(response.body)
+    call = JSON.parse(File.read("./fixtures/lyft_call_response.json"))
   end
-
 
   def get_estimate(origin, destination)
     response = get_cost(origin, destination)
@@ -35,23 +29,13 @@ class LyftService
   #     { cancel_fee: cancel_fee, cancel_token: cancel_token, message: "There is a fee involved with cancelling this ride. Would you like to cancel" }
   #   end
   # end
-
   def cancel_ride_request(ride_id)
     File.read('./fixtures/lyft_cancel_response_failure.json')
-
-    conn.post("/v1/rides/#{ride_id}/cancel") do |request|
-      request.headers['Authorization'] = "Bearer #{@user.api_token}"
-      request.headers['Content-Type'] = 'application/json'
-    end
   end
 
 
   def confirm_cancel(ride_id, token)
-    conn.post("/v1/rides/#{ride_id}/cancel") do |request|
-      request.headers['Authorization'] = "Bearer #{@user.api_token}"
-      request.headers['Content-Type'] = 'application/json'
-      request.body = payload
-    end
+    payload = { cancel_confirmation_token: token }
   end
 
   private

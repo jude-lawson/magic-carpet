@@ -1,4 +1,4 @@
-class AdventuresController < ApplicationController
+class Api::V1::AdventuresController < ApplicationController
   def create
     prefs = JSON.parse(request.body.string, symbolize_names: true)
     d_h = DestinationHandler.new(prefs)
