@@ -3,7 +3,6 @@ describe 'Filter' do
   describe '.remove' do
     it 'should remove all obejcts which dont fit with the specified parameters' do
       parameters ={
-        preferences:{
         search_settings: {
           'open_now' => true,
           'radius' => 3000,
@@ -17,13 +16,11 @@ describe 'Filter' do
               "italian",
               "indian"],
             min_radius: 1000
-            }
+          }
         }
-      }
 
       restaurants = File.open("./fixtures/restaurants.json")
 
-      
       stub_request(:get, "https://api.yelp.com/v3/businesses/search?latitude=39.7293&longitude=-104.9844&open_now=true&price=1,2,3&radius=3000&term=restaurants").
       with(
         headers: {
@@ -35,10 +32,10 @@ describe 'Filter' do
          to_return(status: 200, body: restaurants, headers: {})
       dh = DestinationHandler.new(parameters)
       rests = dh.get_restaurants
-      results = Filter.remove(parameters[:preferences][:restrictions], rests)
+      results = Filter.remove(parameters[:restrictions], rests)
       results.each do |result|
-        expect(result.distance).to be > parameters[:preferences][:restrictions][:min_radius].to_i
-        expect(result.categories).to_not include(parameters[:preferences][:restrictions][:categories].first)
+        expect(result.distance).to be > parameters[:restrictions][:min_radius].to_i
+        expect(result.categories).to_not include(parameters[:restrictions][:categories].first)
       end
     end
   end
