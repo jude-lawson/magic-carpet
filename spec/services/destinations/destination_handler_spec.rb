@@ -4,7 +4,6 @@ RSpec.describe DestinationHandler do
   describe 'get_restaurants' do
     it 'should returns a list of Destination objects' do
       parameters = {
-        preferences: {
         search_settings: {
         'open_now' => true,
         'radius' => 3000,
@@ -20,7 +19,7 @@ RSpec.describe DestinationHandler do
           min_radius: 1000
           }
       }
-    }
+
 
       restaurants = File.open("./fixtures/restaurants.json")
 
@@ -33,7 +32,7 @@ RSpec.describe DestinationHandler do
           'User-Agent'=>'Faraday v0.12.2'
            }).
          to_return(status: 200, body: restaurants, headers: {})
-          
+
       dh = DestinationHandler.new(parameters)
       rests = dh.get_restaurants
       rests.each do |restaurant|
@@ -42,9 +41,8 @@ RSpec.describe DestinationHandler do
     end
     describe 'find a restaurant' do
       it 'should return a single Destination from a list of destinations' do
-        
-        parameters ={
-          preferences:{
+
+        parameters = {
           "search_settings": {
             'open_now' => true,
             'radius' => 3000,
@@ -61,11 +59,10 @@ RSpec.describe DestinationHandler do
               min_radius: 1000
               }
           }
-        }
-  
+
         restaurants = File.open("./fixtures/restaurants.json")
-  
-        
+
+
         stub_request(:get, "https://api.yelp.com/v3/businesses/search?latitude=39.7293&longitude=-104.9844&open_now=true&price=1,2,3&radius=3000&term=restaurants").
         with(
           headers: {
