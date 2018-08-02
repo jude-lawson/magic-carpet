@@ -5,12 +5,12 @@ class LyftService
   end
 
   def call_ride(origin, destination, cost_token)
-    response = conn.post('/v1/rides') do |request|
-      request.headers['Authorization'] = "Bearer #{@user.api_token}"
-      request.headers['Content-Type'] = 'application/json'
-      request.body = { ride_type: 'lyft', origin: origin, destination: destination, token: cost_token }
-    end
-    JSON.parse(response.body)
+    # response = conn.post('/v1/rides') do |request|
+    #   request.headers['Authorization'] = "Bearer #{@user.api_token}"
+    #   request.headers['Content-Type'] = 'application/json'
+    #   request.body = { ride_type: 'lyft', origin: origin, destination: destination, token: cost_token }
+    # end
+    # JSON.parse(response.body)
   end
 
 
@@ -39,19 +39,19 @@ class LyftService
   def cancel_ride_request(ride_id)
     File.read('./fixtures/lyft_cancel_response_failure.json')
 
-    conn.post("/v1/rides/#{ride_id}/cancel") do |request|
-      request.headers['Authorization'] = "Bearer #{@user.api_token}"
-      request.headers['Content-Type'] = 'application/json'
-    end
+    # conn.post("/v1/rides/#{ride_id}/cancel") do |request|
+    #   request.headers['Authorization'] = "Bearer #{@user.api_token}"
+    #   request.headers['Content-Type'] = 'application/json'
+    # end
   end
 
 
   def confirm_cancel(ride_id, token)
-    conn.post("/v1/rides/#{ride_id}/cancel") do |request|
-      request.headers['Authorization'] = "Bearer #{@user.api_token}"
-      request.headers['Content-Type'] = 'application/json'
-      request.body = payload
-    end
+    # conn.post("/v1/rides/#{ride_id}/cancel") do |request|
+    #   request.headers['Authorization'] = "Bearer #{@user.api_token}"
+    #   request.headers['Content-Type'] = 'application/json'
+    #   request.body = payload
+    # end
   end
 
   private

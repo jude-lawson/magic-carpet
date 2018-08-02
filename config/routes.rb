@@ -15,9 +15,11 @@ Rails.application.routes.draw do
       get '/test', to: 'test#index'
       post '/test', to: 'test#create'
     end
+
     namespace :v1 do
       post 'adventures', to: 'adventures#create'
       post 'rides', to: 'rides#create'
+      get 'rides', to: 'rides#new'
       post 'users', to: 'users#create'
       post 'cancel', to: 'rides#cancel'
       post 'confirm', to: 'rides#destroy'
