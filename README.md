@@ -1,24 +1,43 @@
-# README
+# Magic Carpet (Rails JSON API)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This repo contains the backend Rails API of the Magic Carpet app. It serves json intended to be consumed by the [Magic Carpet Mobile App](https://github.com/jude-lawson/magic-carpet-mobile).
 
-Things you may want to cover:
+<hr>
 
-* Ruby version
+## Installation & Setup
+1. Clone down the repo:
 
-* System dependencies
+  ```shell
+  git clone git@github.com:jude-lawson/magic-carpet.git
+  ```
 
-* Configuration
+2. Install necessary dependencies:
 
-* Database creation
+  ```shell
+  bundle install
+  ```
 
-* Database initialization
+3. Set up the database
 
-* How to run the test suite
+  ```shell
+  rake db:setup
+  ```
 
-* Services (job queues, cache servers, search engines, etc.)
+4. Run test suite
 
-* Deployment instructions
+  ```shell
+    rspec
+  ```
+<hr>
 
-* ...
+## Running the Server Locally
+
+To see your code in action locally, you need to fire up a development server. Use the command:
+
+  ```shell
+  rails s
+  ```
+
+Once the server is running, visit API endpoints in your browser:
+
+* `http://localhost:3000/` to run your application.

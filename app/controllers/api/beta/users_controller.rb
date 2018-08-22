@@ -6,7 +6,7 @@ class Api::Beta::UsersController < ApplicationController
     if keys[:token]
       user = User.create!
       response.headers['Authorization'] = payload(user)
-    else 
+    else
       raise ActionController::RoutingError.new('Not Found')
     end
   end
