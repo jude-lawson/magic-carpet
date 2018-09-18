@@ -1,0 +1,47 @@
+{
+  "reviews": [
+      {
+          "id": "E9iGKly-ZWa11yWZfKc6wA",
+          "url": "https://www.yelp.com/biz/prohibition-denver?hrid=E9iGKly-ZWa11yWZfKc6wA&adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "text": "This place was awesome! \nWe had a variety of drinks - beer and cocktails. All were good! I had a Strawberry Fields cocktail and I basically had to share...",
+          "rating": 5,
+          "time_created": "2018-08-19 16:48:44",
+          "user": {
+              "id": "JjNSVZtKisTjSavwWzuJQg",
+              "profile_url": "https://www.yelp.com/user_details?userid=JjNSVZtKisTjSavwWzuJQg",
+              "image_url": "https://s3-media4.fl.yelpcdn.com/photo/FW9n8IRduHuNlo7V0cproA/o.jpg",
+              "name": "Kristen B."
+          }
+      },
+      {
+          "id": "kCQBGQ98Q5BZOGin7w6AEA",
+          "url": "https://www.yelp.com/biz/prohibition-denver?hrid=kCQBGQ98Q5BZOGin7w6AEA&adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "text": "Prohibition was within walking distance of my hotel during a recent recreational stay in Denver, so I gave it a try. It ended up being one of my better life...",
+          "rating": 4,
+          "time_created": "2018-08-13 16:35:34",
+          "user": {
+              "id": "WfMTpU2GOe4N3BEpWZu2fg",
+              "profile_url": "https://www.yelp.com/user_details?userid=WfMTpU2GOe4N3BEpWZu2fg",
+              "image_url": "https://s3-media1.fl.yelpcdn.com/photo/r9uZkSt6Rnvo1q2W3TSdYQ/o.jpg",
+              "name": "Nathan W."
+          }
+      },
+      {
+          "id": "qhiSdZBQT28GjMTIzsBuKA",
+          "url": "https://www.yelp.com/biz/prohibition-denver?hrid=qhiSdZBQT28GjMTIzsBuKA&adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",
+          "text": "I love that this place maintains a classic vibe instead of succumbing to Denver hipster-tude. I've been for happy hour, dinner and pre-show drinks with a...",
+          "rating": 5,
+          "time_created": "2018-06-30 17:50:03",
+          "user": {
+              "id": "BEAeQE4q6Ej1kTbaDAV5UQ",
+              "profile_url": "https://www.yelp.com/user_details?userid=BEAeQE4q6Ej1kTbaDAV5UQ",
+              "image_url": "https://s3-media1.fl.yelpcdn.com/photo/75MyoNYIb_SS5U5OeUQG0Q/o.jpg",
+              "name": "Dez J."
+          }
+      }
+  ],
+  "total": 493,
+  "possible_languages": [
+      "en"
+  ]
+}

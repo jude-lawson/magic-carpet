@@ -5,6 +5,10 @@ class ApplicationController < ActionController::API
     request.headers["payload"]
   end
 
+  def preferences
+    JSON.parse(request.body.string, symbolize_names: true)
+  end
+
   def set_jot
     @token ||= JsonWebToken.decode(from_http)
     rescue JWT::VerificationError, JWT::DecodeError
