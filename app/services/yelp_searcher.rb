@@ -1,6 +1,6 @@
 require './app/services/destination'
 class YelpSearcher
-  def initialize(parameters)
+  def initialize(parameters = {})
     @parameters = parameters
   end
 
@@ -12,6 +12,11 @@ class YelpSearcher
 
   def get_restaurants_json
     JSON.parse(search_businesses.body, symbolize_names: true)
+  end
+
+  def get_reviews(destination)
+    response = conn.get("/businesses/#{destination.id}/reviews")
+    JSON.parse(response.body, symbolize_names: true)[:reviews]
   end
 
   def search_businesses

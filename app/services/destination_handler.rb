@@ -21,8 +21,14 @@ class DestinationHandler
       # }
   end
 
+  def get_reviews(dest)
+    YelpSearcher.new.get_reviews(dest)
+  end
+
   def find_a_restaurant
-    WeightedRandomizer.new.decide(get_restaurants)
+    destination = WeightedRandomizer.new.decide(get_restaurants)
+    destination.reviews = get_reviews(destination)
+    destination
     # WeightedRandomizer is a module which will return a single object picked out of a given array
     # as long as that object responds to rating
   end

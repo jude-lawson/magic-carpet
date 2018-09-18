@@ -8,7 +8,6 @@ class Api::V1::RidesController < ApplicationController
   end
 
   def cancel
-    require'pry';binding.pry
     lyft_service = LyftService.new(@user)
     ride_id =  JSON.parse(request.body.string, symbolize_names: true)
     response = lyft_service.cancel_ride_request(ride_id)
@@ -17,7 +16,6 @@ class Api::V1::RidesController < ApplicationController
 
   def destroy
     # response = LyftService.cancel_ride(headers['ride_id'], headers['cost_token'])
-    require'pry';binding.pry
     lyft_service = LyftService.new(@user)
     ride_id = JSON.parse(request.body.string, symbolize_names: true)
     response = LyftService.confirm_cancel(ride_id, token)
