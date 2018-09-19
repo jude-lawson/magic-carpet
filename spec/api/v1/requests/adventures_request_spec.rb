@@ -16,14 +16,14 @@ RSpec.describe Api::V1::AdventuresController, type: :controller do
     to_return(status: 200, body: restaurants, headers: {})
 
 
-      stub_request(:get, "https://api.yelp.com/businesses/k1mGLPBSaUhZKem1KrXLJQ/reviews").
-       with(
-         headers: {
-          'Accept'=>'*/*',
-          'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
-          'Authorization'=>'Bearer CJO1wLSD-ZirOvL0ViX92AA4zmZdAdgEy8Gs0C-1UzgfmSt7NJ_QYrEjAx6ZA6SOUnNYpQgXK3MiuaOa-gfFkRWo00l0ehR0E_9uEmuSHXOQhEL0wT9t3H8nCvZPW3Yx',
-          'User-Agent'=>'Faraday v0.12.2'
-         }).
+    stub_request(:get, "https://api.yelp.com/v3/businesses/k1mGLPBSaUhZKem1KrXLJQ/reviews").
+    with(
+      headers: {
+     'Accept'=>'*/*',
+     'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+     'Authorization'=>'Bearer CJO1wLSD-ZirOvL0ViX92AA4zmZdAdgEy8Gs0C-1UzgfmSt7NJ_QYrEjAx6ZA6SOUnNYpQgXK3MiuaOa-gfFkRWo00l0ehR0E_9uEmuSHXOQhEL0wT9t3H8nCvZPW3Yx',
+     'User-Agent'=>'Faraday v0.12.2'
+      }).
         to_return(status: 200, body: reviews, headers: {})
 
       stub_request(:get, "https://api.lyft.com/v1/cost?end_lat=39.7441431&end_lng=-104.9947764&ride_type=lyft&start_lat=39.7293&start_lng=-104.9844").
