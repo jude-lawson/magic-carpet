@@ -39,15 +39,12 @@ RSpec.describe Api::V1::AdventuresController, type: :controller do
 
   describe 'create' do
     it 'should return the price and destination in json' do
-
-
          Setting.create(
            id: 0,
            max_radius: 4000,
            min_radius: 1000,
            min_rating: 0,
          )
-
       user = User.create!
       @request.headers["payload"] = JsonWebToken.encode({"id" => user.id}.to_json)
       parameters = {
