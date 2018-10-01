@@ -1,6 +1,5 @@
 class Filter 
   def self.remove(parameters, restaurants)
-    require'pry';binding.pry
     restaurants.reject do |restaurant|
       check_distance(parameters[:min_radius], restaurant) ||
       check_categories(parameters[:categories], restaurant)
