@@ -33,5 +33,4 @@ ActiveRecord::Schema.define(version: 2018_07_30_053625) do
     t.bigint "setting_id", default: 0
     t.index ["setting_id"], name: "index_users_on_setting_id"
   end
-
 end
