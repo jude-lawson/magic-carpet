@@ -53,7 +53,7 @@ describe 'Filter' do
             categories: [
               "italian",
               "indian"],
-            min_radius: 3000
+            min_radius: 4000
           }
         }
 
@@ -69,8 +69,7 @@ describe 'Filter' do
         }).
          to_return(status: 200, body: restaurants, headers: {})
       dh = DestinationHandler.new(parameters)
-      rests = dh.get_restaurants
-      expect(Filter.remove(parameters[:restrictions], rests) ).to raise_exception
+      expect{rests = dh.get_restaurants}.to raise_error(ImpossibleRequest)
     end
   end
 end

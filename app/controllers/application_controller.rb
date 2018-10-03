@@ -34,19 +34,21 @@ class ApplicationController < ActionController::API
     JsonWebToken.encode(set_payload(user))
   end
 
-  def set_payload(user)
-    {
-      id: user.id,
-      ride_count: user.ride_count,
-      settings: {
-        max_radius: user.setting.max_radius,
-        min_radius: user.setting.min_radius,
-        max_price: user.setting.max_price,
-        min_price: user.setting.min_price,
-        min_rating: user.setting.min_rating,
-        max_rating: user.setting.max_rating
-      }
-    }.to_json
-  end
+
+
+  # def set_payload(user)
+  #   {
+  #     id: user.id,
+  #     ride_count: user.ride_count,
+  #     settings: {
+  #       max_radius: user.setting.max_radius,
+  #       min_radius: user.setting.min_radius,
+  #       max_price: user.setting.max_price,
+  #       min_price: user.setting.min_price,
+  #       min_rating: user.setting.min_rating,
+  #       max_rating: user.setting.max_rating
+  #     }
+  #   }.to_json
+  # end
 
 end
