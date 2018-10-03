@@ -34,7 +34,23 @@ class ApplicationController < ActionController::API
     JsonWebToken.encode(set_payload(user))
   end
 
+  def current_location
+    {
+      latitude: preferences[:search_settings][:latitude],
+      longitude: preferences[:search_settings][:longitude]
+    }
+  end
 
+  def safe_query
+    begin
+      yield
+    rescue => err
+      render json: {
+        message: "An error has occurred.}",
+        error: "#{err.class}: #{err}"
+      }, status: err.status
+    end
+  end
 
   # def set_payload(user)
   #   {
