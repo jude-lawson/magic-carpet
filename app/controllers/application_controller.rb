@@ -10,9 +10,11 @@ class ApplicationController < ActionController::API
   end
 
   def set_jot
-    @token ||= JsonWebToken.decode(from_http)
+    begin
+      @token ||= JsonWebToken.decode(from_http)
     rescue JWT::VerificationError, JWT::DecodeError
       raise ActionController::RoutingError.new('Not Found')
+    end
   end
 
   def authenticate!
@@ -24,14 +26,6 @@ class ApplicationController < ActionController::API
     else
       raise ActionController::RoutingError.new('Not Found')
     end
-  end
-
-  def payload(user)
-    puts(set_payload(user))
-    encoded = JsonWebToken.encode(set_payload(user))
-    puts(encoded)
-    puts(JsonWebToken.decode(encoded))
-    JsonWebToken.encode(set_payload(user))
   end
 
   def current_location
@@ -46,25 +40,10 @@ class ApplicationController < ActionController::API
       yield
     rescue => err
       render json: {
-        message: "An error has occurred.}",
+        message: "An error has occurred.",
         error: "#{err.class}: #{err}"
       }, status: err.status
     end
   end
-
-  # def set_payload(user)
-  #   {
-  #     id: user.id,
-  #     ride_count: user.ride_count,
-  #     settings: {
-  #       max_radius: user.setting.max_radius,
-  #       min_radius: user.setting.min_radius,
-  #       max_price: user.setting.max_price,
-  #       min_price: user.setting.min_price,
-  #       min_rating: user.setting.min_rating,
-  #       max_rating: user.setting.max_rating
-  #     }
-  #   }.to_json
-  # end
 
 end

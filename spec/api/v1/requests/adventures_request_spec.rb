@@ -75,5 +75,36 @@ RSpec.describe Api::V1::AdventuresController, type: :controller do
       expect(reviews.first).to have_content('rating')
       expect(reviews.first).to have_content('user')
     end
+    it 'should return an error payload with status 400 if the filter params yeild no results' do
+      Setting.create(
+        id: 0,
+        max_radius: 4000,
+        min_radius: 1000,
+        min_rating: 0,
+          )
+      user = User.create!
+      @request.headers["payload"] = JsonWebToken.encode({"id" => user.id}.to_json)
+      parameters = {
+        search_settings: {
+          'open_now' => true,
+          'radius' => 3000,
+          'latitude' => 39.7293,
+          'longitude' => -104.9844,
+          'price' => "1,2,3",
+          'term' => 'restaurants'
+        },
+        restrictions: {
+            categories: [
+              "italian",
+              "indian"],
+            min_radius: 5000
+            }
+        }
+      post :create, body: parameters.to_json
+      parsed_response = JSON.parse(response.body)
+      expect(parsed_response['message']).to eq("An error has occurred.")
+      expect(parsed_response['error']).to eq("ImpossibleRequest: Filter Criteria too strict")
+      expect(response.status).to eq(400)
+    end
   end
 end
