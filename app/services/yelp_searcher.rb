@@ -16,7 +16,10 @@ class YelpSearcher
 
   def get_reviews(destination)
     response = conn.get("businesses/#{destination.id}/reviews")
-    JSON.parse(response.body, symbolize_names: true)[:reviews]
+    reviews = JSON.parse(response.body, symbolize_names: true)[:reviews]
+    reviews.each do |rev|
+      rev[:text].gsub!(destination.name, '?'*destination.name.length)
+    end
   end
 
   def search_businesses
