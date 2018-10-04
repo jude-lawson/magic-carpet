@@ -89,18 +89,19 @@ describe 'Filter' do
           }
         }
 
-      restaurants = File.open("./fixtures/restaurants.json")
-      stub_request(:get, "https://api.yelp.com/v3/businesses/Ip6MAcRC_HTPxhuKi2ZD2w/reviews").
-      with(
-        headers: {
+      restaurants = File.open("./fixtures/restaurant.json")
+      reviews = File.open("./fixtures/reviews.json")
+
+      stub_request(:get, "https://api.yelp.com/v3/businesses/k1mGLPBSaUhZKem1KrXLJQ/reviews").
+         with(
+           headers: {
           'Accept'=>'*/*',
           'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
           'Authorization'=>'Bearer CJO1wLSD-ZirOvL0ViX92AA4zmZdAdgEy8Gs0C-1UzgfmSt7NJ_QYrEjAx6ZA6SOUnNYpQgXK3MiuaOa-gfFkRWo00l0ehR0E_9uEmuSHXOQhEL0wT9t3H8nCvZPW3Yx',
           'User-Agent'=>'Faraday v0.12.2'
-        }).
-      to_return(status: 200, body: "", headers: {})
+           }).
+      to_return(status: 200, body: reviews, headers: {})
 
-      restaurants = File.open("./fixtures/reviews.json")
       stub_request(:get, "https://api.yelp.com/v3/businesses/search?latitude=39.7293&longitude=-104.9844&open_now=true&price=1,2,3&radius=3000&term=restaurants").
       with(
         headers: {
@@ -113,7 +114,7 @@ describe 'Filter' do
 
       dh = DestinationHandler.new(parameters)
       restaurant = dh.find_a_restaurant
-      reviews = restaurant.reviews.map {|review|review['text']}
+      reviews = restaurant.reviews.map {|review|review[:text]}
       expect(reviews.any?{|review|review.include?(restaurant.name)}).to eq(false)
     end
   end
