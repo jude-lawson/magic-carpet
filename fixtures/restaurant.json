@@ -2,8 +2,8 @@
   "businesses": [
       {
           "id": "k1mGLPBSaUhZKem1KrXLJQ",
-          "alias": "stout-street-social-denver-2",
-          "name": "Stout Street Social",
+          "alias": "prohibition-denver",
+          "name": "Prohibition",
           "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/gwd6sIWrVxxdgzGloQ7peA/o.jpg",
           "is_closed": false,
           "url": "https://www.yelp.com/biz/stout-street-social-denver-2?adjust_creative=3hvNsDFWy5fCdF-rhzEhWQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=3hvNsDFWy5fCdF-rhzEhWQ",

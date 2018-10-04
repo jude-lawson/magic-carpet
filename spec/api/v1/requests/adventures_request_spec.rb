@@ -67,7 +67,7 @@ RSpec.describe Api::V1::AdventuresController, type: :controller do
       parsed_response = JSON.parse(response.body)
       expect(parsed_response['price_range']['min_cost']).to eq(1052)
       expect(parsed_response['price_range']['max_cost']).to eq(1755)
-      expect(parsed_response['destination']['name']).to eq("Stout Street Social")
+      expect(parsed_response['destination']['name']).to eq("Prohibition")
       reviews = parsed_response['destination']['reviews']
       expect(reviews.count).to eq(3)
       expect(reviews.first).to have_content('id')
