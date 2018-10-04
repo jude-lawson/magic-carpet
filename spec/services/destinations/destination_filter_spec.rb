@@ -71,6 +71,7 @@ describe 'Filter' do
       dh = DestinationHandler.new(parameters)
       expect{rests = dh.get_restaurants}.to raise_error(ImpossibleRequest)
     end
+    
     it 'should return the reviews but with the name of the destination redacted' do
       parameters ={
         search_settings: {
