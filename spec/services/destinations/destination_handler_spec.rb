@@ -98,7 +98,6 @@ RSpec.describe DestinationHandler do
         dh = DestinationHandler.new(parameters)
         rests = dh.get_restaurants
         result = dh.find_a_restaurant
-        require'pry';binding.pry
         expect(result).to be_a(Destination)
       end
     end
