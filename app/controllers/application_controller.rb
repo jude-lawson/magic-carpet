@@ -42,7 +42,7 @@ class ApplicationController < ActionController::API
       render json: {
         message: "An error has occurred.",
         error: "#{err.class}: #{err}"
-      }, status: err.status
+      }, status: 400
     end
   end
 
